@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{769665BA-888E-4C5F-85D9-01980F8D5F55}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Messages.Postbridge</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Messages.Postbridge.Bitmap\Definition.cs" />
+    <Compile Include="Messages.Postbridge.Bitmap\Message.cs" />
+    <Compile Include="Messages.Postbridge.Enums\AccountType.cs" />
+    <Compile Include="Messages.Postbridge.Enums\AccountTypeEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\AccountTypeQualifier.cs" />
+    <Compile Include="Messages.Postbridge.Enums\AccountTypeQualifierEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\AmountType.cs" />
+    <Compile Include="Messages.Postbridge.Enums\AmountTypeEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\AreaOfUsage.cs" />
+    <Compile Include="Messages.Postbridge.Enums\AreaOfUsageEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\AuthorizationLimits.cs" />
+    <Compile Include="Messages.Postbridge.Enums\AuthorizationLimitsEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\AuthorizationProcessingRequirements.cs" />
+    <Compile Include="Messages.Postbridge.Enums\AuthorizationProcessingRequirementsEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\AuthorizationType.cs" />
+    <Compile Include="Messages.Postbridge.Enums\AuthorizationTypeEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\CardCaptureCapability.cs" />
+    <Compile Include="Messages.Postbridge.Enums\CardCaptureCapabilityEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\CardDataInputCapability.cs" />
+    <Compile Include="Messages.Postbridge.Enums\CardDataInputCapabilityEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\CardDataInputMode.cs" />
+    <Compile Include="Messages.Postbridge.Enums\CardDataInputModeEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\CardDataOutputCapability.cs" />
+    <Compile Include="Messages.Postbridge.Enums\CardDataOutputCapabilityEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\CardholderAuthenticationCapability.cs" />
+    <Compile Include="Messages.Postbridge.Enums\CardholderAuthenticationCapabilityEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\CardholderAuthenticationEntity.cs" />
+    <Compile Include="Messages.Postbridge.Enums\CardholderAuthenticationEntityEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\CardholderAuthenticationMethod.cs" />
+    <Compile Include="Messages.Postbridge.Enums\CardholderAuthenticationMethodEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\CardholderPresent.cs" />
+    <Compile Include="Messages.Postbridge.Enums\CardholderPresentEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\CardPresent.cs" />
+    <Compile Include="Messages.Postbridge.Enums\CardPresentEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\CardVerificationResult.cs" />
+    <Compile Include="Messages.Postbridge.Enums\CardVerificationResultEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\ExtendedTransactionType.cs" />
+    <Compile Include="Messages.Postbridge.Enums\ExtendedTransactionTypeEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\FileUpdateCode.cs" />
+    <Compile Include="Messages.Postbridge.Enums\FileUpdateCodeEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\MessageReasonCode.cs" />
+    <Compile Include="Messages.Postbridge.Enums\MessageReasonCodeEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\MessageType.cs" />
+    <Compile Include="Messages.Postbridge.Enums\MessageTypeEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\NetworkManagementCode.cs" />
+    <Compile Include="Messages.Postbridge.Enums\NetworkManagementCodeEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\OperatingEnvironment.cs" />
+    <Compile Include="Messages.Postbridge.Enums\OperatingEnvironmentEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\PANEntryMode.cs" />
+    <Compile Include="Messages.Postbridge.Enums\PANEntryModeEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\PINCaptureCapability.cs" />
+    <Compile Include="Messages.Postbridge.Enums\PINCaptureCapabilityEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\PINEntryCapability.cs" />
+    <Compile Include="Messages.Postbridge.Enums\PINEntryCapabilityEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\POSConditionCode.cs" />
+    <Compile Include="Messages.Postbridge.Enums\POSConditionCodeEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\ResponseCode.cs" />
+    <Compile Include="Messages.Postbridge.Enums\ResponseCodeEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\ServicesAndPINRequirements.cs" />
+    <Compile Include="Messages.Postbridge.Enums\ServicesAndPINRequirementsEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\SettlementCode.cs" />
+    <Compile Include="Messages.Postbridge.Enums\SettlementCodeEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\TerminalOperator.cs" />
+    <Compile Include="Messages.Postbridge.Enums\TerminalOperatorEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\TerminalOutputCapability.cs" />
+    <Compile Include="Messages.Postbridge.Enums\TerminalOutputCapabilityEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\TerminalType.cs" />
+    <Compile Include="Messages.Postbridge.Enums\TerminalTypeEnum.cs" />
+    <Compile Include="Messages.Postbridge.Enums\TransactionType.cs" />
+    <Compile Include="Messages.Postbridge.Enums\TransactionTypeEnum.cs" />
+    <Compile Include="Messages.Postbridge.Fields\AccountTypeQualifiers.cs" />
+    <Compile Include="Messages.Postbridge.Fields\AdditionalAmounts.cs" />
+    <Compile Include="Messages.Postbridge.Fields\AmountField.cs" />
+    <Compile Include="Messages.Postbridge.Fields\AuthorizationProfile.cs" />
+    <Compile Include="Messages.Postbridge.Fields\CardAcceptorNameLocation.cs" />
+    <Compile Include="Messages.Postbridge.Fields\CardVerificationResult.cs" />
+    <Compile Include="Messages.Postbridge.Fields\DateTimeField.cs" />
+    <Compile Include="Messages.Postbridge.Fields\ExtendedTransactionType.cs" />
+    <Compile Include="Messages.Postbridge.Fields\FileUpdateCode.cs" />
+    <Compile Include="Messages.Postbridge.Fields\MessageReasonCode.cs" />
+    <Compile Include="Messages.Postbridge.Fields\MessageType.cs" />
+    <Compile Include="Messages.Postbridge.Fields\NetworkManagementCode.cs" />
+    <Compile Include="Messages.Postbridge.Fields\OriginalDataElements.cs" />
+    <Compile Include="Messages.Postbridge.Fields\POSConditionCode.cs" />
+    <Compile Include="Messages.Postbridge.Fields\POSData.cs" />
+    <Compile Include="Messages.Postbridge.Fields\POSDataCode.cs" />
+    <Compile Include="Messages.Postbridge.Fields\POSEntryMode.cs" />
+    <Compile Include="Messages.Postbridge.Fields\POSGeographicData.cs" />
+    <Compile Include="Messages.Postbridge.Fields\ProcessingCode.cs" />
+    <Compile Include="Messages.Postbridge.Fields\ReplacementAmounts.cs" />
+    <Compile Include="Messages.Postbridge.Fields\ResponseCode.cs" />
+    <Compile Include="Messages.Postbridge.Fields\RoutingInformation.cs" />
+    <Compile Include="Messages.Postbridge.Fields\ServiceRestrictionCode.cs" />
+    <Compile Include="Messages.Postbridge.Fields\SettlementCode.cs" />
+    <Compile Include="Messages.Postbridge.Fields\StructuredData.cs" />
+    <Compile Include="Messages.Postbridge.Fields\Track2Data.cs" />
+    <Compile Include="Messages.Postbridge.Fields\TransactionReference.cs" />
+    <Compile Include="Messages.Postbridge.Helpers\AccountTypeQualifiers.cs" />
+    <Compile Include="Messages.Postbridge.Helpers\AdditionalAmount.cs" />
+    <Compile Include="Messages.Postbridge.Helpers\AdditionalAmounts.cs" />
+    <Compile Include="Messages.Postbridge.Helpers\AuthorizationProfile.cs" />
+    <Compile Include="Messages.Postbridge.Helpers\CardAcceptorNameLocation.cs" />
+    <Compile Include="Messages.Postbridge.Helpers\DateTimeType.cs" />
+    <Compile Include="Messages.Postbridge.Helpers\EFTConstant.cs" />
+    <Compile Include="Messages.Postbridge.Helpers\EFTProperties.cs" />
+    <Compile Include="Messages.Postbridge.Helpers\LinkedAccount.cs" />
+    <Compile Include="Messages.Postbridge.Helpers\LinkedAccounts.cs" />
+    <Compile Include="Messages.Postbridge.Helpers\OriginalDataElements.cs" />
+    <Compile Include="Messages.Postbridge.Helpers\POSData.cs" />
+    <Compile Include="Messages.Postbridge.Helpers\POSDataCode.cs" />
+    <Compile Include="Messages.Postbridge.Helpers\POSEntryMode.cs" />
+    <Compile Include="Messages.Postbridge.Helpers\POSGeographicData.cs" />
+    <Compile Include="Messages.Postbridge.Helpers\ProcessingCode.cs" />
+    <Compile Include="Messages.Postbridge.Helpers\ReplacementAmounts.cs" />
+    <Compile Include="Messages.Postbridge.Helpers\RoutingInformation.cs" />
+    <Compile Include="Messages.Postbridge.Helpers\ServiceRestrictionCode.cs" />
+    <Compile Include="Messages.Postbridge.Helpers\StructuredDataItem.cs" />
+    <Compile Include="Messages.Postbridge.Helpers\StructuredDataItems.cs" />
+    <Compile Include="Messages.Postbridge.Helpers\Track2Data.cs" />
+    <Compile Include="Messages.Postbridge.Helpers\TransactionReference.cs" />
+    <Compile Include="Messages.Postbridge\Configuration.cs" />
+    <Compile Include="Messages.Postbridge\ICCFields.cs" />
+    <Compile Include="Messages.Postbridge\MessageFields.cs" />
+    <Compile Include="Messages.Postbridge\PrivateFields.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Messaging" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Messages.Core\Messages.Core.csproj">
+      <Project>{8f9026ec-0a9c-4c6b-b73c-7ec77b83ea7c}</Project>
+      <Name>Messages.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

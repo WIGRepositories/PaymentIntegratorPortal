@@ -1,0 +1,49 @@
+using System;
+
+namespace Messages.Postbridge.Enums
+{
+	public enum TransactionTypeEnum
+	{
+		GoodsAndServices,
+		CashWithdrawal,
+		DebitAdjustment,
+		CheckCash,
+		CheckVerification,
+		EuroCheque,
+		TravellersCheck,
+		LetterOfCredit,
+		Giro,
+		GoodsAndServicesWithCashback,
+		WireTransfer,
+		QuasiCash,
+		GeneralDebit,
+		VisaCashLoadSettlementReversal,
+		ReturnRefund,
+		Deposit,
+		CreditAdjustment,
+		CheckDepositGuarantee,
+		CheckDeposit,
+		GeneralCredit,
+		MerchandiseRequest,
+		VisaCashLoadSettlement,
+		AvailableBalanceInquiry,
+		BalanceInquiry,
+		GeneralInquiry,
+		FullStatementInquiry,
+		MerchandiseInquiry,
+		CardVerificationInquiry,
+		MiniStatementInquiry,
+		LinkedAccountInquiry,
+		CardholderAccountsTransfer,
+		GeneralTransfer,
+		PaymentFromAccount,
+		PaymentByDeposit,
+		GeneralPayment,
+		PaymentToAccount,
+		PaymentFromAccountToAccount,
+		PlaceHoldOnCard,
+		GeneralAdmin,
+		ChangePIN,
+		DeadEnd
+	}
+}

@@ -1,0 +1,586 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EDDE8D22-731E-4542-9C75-05CD4D684C7C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PaymentIntegratorPortal</RootNamespace>
+    <AssemblyName>PaymentIntegratorPortal</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.0.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.0.0\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.0.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DBScripts\SpsScripts.sql" />
+    <Content Include="DBScripts\Tables.sql" />
+    <Content Include="Global.asax" />
+    <Content Include="Index.html" />
+    <Content Include="UI\CheckOut.html" />
+    <Content Include="UI\DigitalBusinessPlatform.html" />
+    <Content Include="UI\FAQs.html" />
+    <Content Include="UI\Files\corporate\css\custom.css" />
+    <Content Include="UI\Files\corporate\css\style-responsive.css" />
+    <Content Include="UI\Files\corporate\css\style.css" />
+    <Content Include="UI\Files\corporate\css\themes\blue.css" />
+    <Content Include="UI\Files\corporate\css\themes\gray.css" />
+    <Content Include="UI\Files\corporate\css\themes\green.css" />
+    <Content Include="UI\Files\corporate\css\themes\orange.css" />
+    <Content Include="UI\Files\corporate\css\themes\red.css" />
+    <Content Include="UI\Files\corporate\css\themes\turquoise.css" />
+    <Content Include="UI\Files\corporate\img\blockquote-corner-another-color.png" />
+    <Content Include="UI\Files\corporate\img\blockquote-corner.png" />
+    <Content Include="UI\Files\corporate\img\fa-angle-brands.png" />
+    <Content Include="UI\Files\corporate\img\fa-angle-down-langs.png" />
+    <Content Include="UI\Files\corporate\img\fa-angles.png" />
+    <Content Include="UI\Files\corporate\img\icon-color-close.png" />
+    <Content Include="UI\Files\corporate\img\icon-color.png" />
+    <Content Include="UI\Files\corporate\img\icons\add-goods.png" />
+    <Content Include="UI\Files\corporate\img\icons\del-goods.png" />
+    <Content Include="UI\Files\corporate\img\icons\search-icon.png" />
+    <Content Include="UI\Files\corporate\img\icons\shop-cart-icon.png" />
+    <Content Include="UI\Files\corporate\img\icons\sidebar-toggle-icons.png" />
+    <Content Include="UI\Files\corporate\img\icons\toggler.png" />
+    <Content Include="UI\Files\corporate\img\icons\top-search-icon.png" />
+    <Content Include="UI\Files\corporate\img\layerslider-arrows.png" />
+    <Content Include="UI\Files\corporate\img\logos\0logo-blue-small.png" />
+    <Content Include="UI\Files\corporate\img\logos\0logo-blue.png" />
+    <Content Include="UI\Files\corporate\img\logos\0logo-green.png" />
+    <Content Include="UI\Files\corporate\img\logos\0logo-orange.png" />
+    <Content Include="UI\Files\corporate\img\logos\logo-corp-blue.png" />
+    <Content Include="UI\Files\corporate\img\logos\logo-corp-gray.png" />
+    <Content Include="UI\Files\corporate\img\logos\logo-corp-green.png" />
+    <Content Include="UI\Files\corporate\img\logos\logo-corp-orange.png" />
+    <Content Include="UI\Files\corporate\img\logos\logo-corp-red.png" />
+    <Content Include="UI\Files\corporate\img\logos\logo-corp-turquoise.png" />
+    <Content Include="UI\Files\corporate\img\logos\logo-red.png" />
+    <Content Include="UI\Files\corporate\img\logos\logo-shop-blue.png" />
+    <Content Include="UI\Files\corporate\img\logos\logo-shop-gray.png" />
+    <Content Include="UI\Files\corporate\img\logos\logo-shop-green.png" />
+    <Content Include="UI\Files\corporate\img\logos\logo-shop-orange.png" />
+    <Content Include="UI\Files\corporate\img\logos\logo-shop-red.png" />
+    <Content Include="UI\Files\corporate\img\logos\logo-shop-turquoise.png" />
+    <Content Include="UI\Files\corporate\img\logos\shop-logo-red.png" />
+    <Content Include="UI\Files\corporate\img\new.png" />
+    <Content Include="UI\Files\corporate\img\payments\american-express.jpg" />
+    <Content Include="UI\Files\corporate\img\payments\fa-angle-right-info.png" />
+    <Content Include="UI\Files\corporate\img\payments\MasterCard.jpg" />
+    <Content Include="UI\Files\corporate\img\payments\PayPal.jpg" />
+    <Content Include="UI\Files\corporate\img\payments\visa.jpg" />
+    <Content Include="UI\Files\corporate\img\payments\western-union.jpg" />
+    <Content Include="UI\Files\corporate\img\sale.png" />
+    <Content Include="UI\Files\corporate\img\step3-angle-right.png" />
+    <Content Include="UI\Files\corporate\img\syncfusion-icons-white.png" />
+    <Content Include="UI\Files\corporate\img\syncfusion-icons.png" />
+    <Content Include="UI\Files\corporate\img\up.png" />
+    <Content Include="UI\Files\corporate\scripts\back-to-top.js" />
+    <Content Include="UI\Files\corporate\scripts\layout.js" />
+    <Content Include="UI\Files\devicons\css\devicons.css" />
+    <Content Include="UI\Files\devicons\css\devicons.min.css" />
+    <Content Include="UI\Files\pages\css\animate.css" />
+    <Content Include="UI\Files\pages\css\components.css" />
+    <Content Include="UI\Files\pages\css\gallery.css" />
+    <Content Include="UI\Files\pages\css\portfolio.css" />
+    <Content Include="UI\Files\pages\css\slider.css" />
+    <Content Include="UI\Files\pages\css\style-shop.css" />
+    <Content Include="UI\Files\pages\img\brands\canon.jpg" />
+    <Content Include="UI\Files\pages\img\brands\esprit.jpg" />
+    <Content Include="UI\Files\pages\img\brands\gap.jpg" />
+    <Content Include="UI\Files\pages\img\brands\next.jpg" />
+    <Content Include="UI\Files\pages\img\brands\puma.jpg" />
+    <Content Include="UI\Files\pages\img\brands\zara.jpg" />
+    <Content Include="UI\Files\pages\img\careers\careers.jpg" />
+    <Content Include="UI\Files\pages\img\cart-img.jpg" />
+    <Content Include="UI\Files\pages\img\clients\client_1.png" />
+    <Content Include="UI\Files\pages\img\clients\client_1_gray.png" />
+    <Content Include="UI\Files\pages\img\clients\client_2.png" />
+    <Content Include="UI\Files\pages\img\clients\client_2_gray.png" />
+    <Content Include="UI\Files\pages\img\clients\client_3.png" />
+    <Content Include="UI\Files\pages\img\clients\client_3_gray.png" />
+    <Content Include="UI\Files\pages\img\clients\client_4.png" />
+    <Content Include="UI\Files\pages\img\clients\client_4_gray.png" />
+    <Content Include="UI\Files\pages\img\clients\client_5.png" />
+    <Content Include="UI\Files\pages\img\clients\client_5_gray.png" />
+    <Content Include="UI\Files\pages\img\clients\client_6.png" />
+    <Content Include="UI\Files\pages\img\clients\client_6_gray.png" />
+    <Content Include="UI\Files\pages\img\clients\client_7.png" />
+    <Content Include="UI\Files\pages\img\clients\client_7_gray.png" />
+    <Content Include="UI\Files\pages\img\clients\client_8.png" />
+    <Content Include="UI\Files\pages\img\clients\client_8_gray.png" />
+    <Content Include="UI\Files\pages\img\fa-angle-brands.png" />
+    <Content Include="UI\Files\pages\img\fa-angles.png" />
+    <Content Include="UI\Files\pages\img\frontend-slider\bg1.jpg" />
+    <Content Include="UI\Files\pages\img\frontend-slider\bg1_BK.jpg" />
+    <Content Include="UI\Files\pages\img\frontend-slider\bg2.jpg" />
+    <Content Include="UI\Files\pages\img\frontend-slider\bg2_BK.jpg" />
+    <Content Include="UI\Files\pages\img\frontend-slider\bg3.jpg" />
+    <Content Include="UI\Files\pages\img\frontend-slider\bg4.jpg" />
+    <Content Include="UI\Files\pages\img\frontend-slider\bg5.jpg" />
+    <Content Include="UI\Files\pages\img\frontend-slider\bg8.jpg" />
+    <Content Include="UI\Files\pages\img\frontend-slider\bg9.jpg" />
+    <Content Include="UI\Files\pages\img\frontend-slider\bg9_BK.jpg" />
+    <Content Include="UI\Files\pages\img\frontend-slider\hint1-blue.png" />
+    <Content Include="UI\Files\pages\img\frontend-slider\hint1-green.png" />
+    <Content Include="UI\Files\pages\img\frontend-slider\hint1-orange.png" />
+    <Content Include="UI\Files\pages\img\frontend-slider\hint1-red.png" />
+    <Content Include="UI\Files\pages\img\frontend-slider\hint2-blue.png" />
+    <Content Include="UI\Files\pages\img\frontend-slider\hint2-green.png" />
+    <Content Include="UI\Files\pages\img\frontend-slider\hint2-orange.png" />
+    <Content Include="UI\Files\pages\img\frontend-slider\hint2-red.png" />
+    <Content Include="UI\Files\pages\img\frontend-slider\ipad.png" />
+    <Content Include="UI\Files\pages\img\frontend-slider\ipadmini.png" />
+    <Content Include="UI\Files\pages\img\frontend-slider\iphone.png" />
+    <Content Include="UI\Files\pages\img\frontend-slider\iphone_large.png" />
+    <Content Include="UI\Files\pages\img\frontend-slider\iphone_left.png" />
+    <Content Include="UI\Files\pages\img\frontend-slider\iphone_right.png" />
+    <Content Include="UI\Files\pages\img\frontend-slider\mac.png" />
+    <Content Include="UI\Files\pages\img\frontend-slider\macbook.png" />
+    <Content Include="UI\Files\pages\img\frontend-slider\thumbs\thumb1.jpg" />
+    <Content Include="UI\Files\pages\img\frontend-slider\thumbs\thumb2.jpg" />
+    <Content Include="UI\Files\pages\img\frontend-slider\thumbs\thumb3.jpg" />
+    <Content Include="UI\Files\pages\img\frontend-slider\thumbs\thumb4.jpg" />
+    <Content Include="UI\Files\pages\img\frontend-slider\thumbs\thumb5.jpg" />
+    <Content Include="UI\Files\pages\img\frontend-slider\thumbs\thumb6.jpg" />
+    <Content Include="UI\Files\pages\img\frontend-slider\thumbs\thumb7.jpg" />
+    <Content Include="UI\Files\pages\img\icon-color-close.png" />
+    <Content Include="UI\Files\pages\img\icon-color.png" />
+    <Content Include="UI\Files\pages\img\icons\add-goods.png" />
+    <Content Include="UI\Files\pages\img\icons\del-goods.png" />
+    <Content Include="UI\Files\pages\img\icons\search-icon.png" />
+    <Content Include="UI\Files\pages\img\icons\shop-cart-icon.png" />
+    <Content Include="UI\Files\pages\img\icons\sidebar-toggle-icons.png" />
+    <Content Include="UI\Files\pages\img\icons\toggler.png" />
+    <Content Include="UI\Files\pages\img\icons\top-search-icon.png" />
+    <Content Include="UI\Files\pages\img\img1.jpg" />
+    <Content Include="UI\Files\pages\img\img3.jpg" />
+    <Content Include="UI\Files\pages\img\index-sliders\slide1.jpg" />
+    <Content Include="UI\Files\pages\img\index-sliders\slide2.jpg" />
+    <Content Include="UI\Files\pages\img\index-sliders\slide3.jpg" />
+    <Content Include="UI\Files\pages\img\new.png" />
+    <Content Include="UI\Files\pages\img\people\img1-large.jpg" />
+    <Content Include="UI\Files\pages\img\people\img1-small.jpg" />
+    <Content Include="UI\Files\pages\img\people\img2-large.jpg" />
+    <Content Include="UI\Files\pages\img\people\img2-small.jpg" />
+    <Content Include="UI\Files\pages\img\people\img3-large.jpg" />
+    <Content Include="UI\Files\pages\img\people\img3-small.jpg" />
+    <Content Include="UI\Files\pages\img\people\img4-large.jpg" />
+    <Content Include="UI\Files\pages\img\people\img4-small.jpg" />
+    <Content Include="UI\Files\pages\img\people\img5-large.jpg" />
+    <Content Include="UI\Files\pages\img\people\img5-small.jpg" />
+    <Content Include="UI\Files\pages\img\people\img6-large.jpg" />
+    <Content Include="UI\Files\pages\img\people\img6-small.jpg" />
+    <Content Include="UI\Files\pages\img\people\img7-large.jpg" />
+    <Content Include="UI\Files\pages\img\people\img7-small.jpg" />
+    <Content Include="UI\Files\pages\img\people\img8-large.jpg" />
+    <Content Include="UI\Files\pages\img\people\img8-small.jpg" />
+    <Content Include="UI\Files\pages\img\photos\img1.jpg" />
+    <Content Include="UI\Files\pages\img\photos\img2.jpg" />
+    <Content Include="UI\Files\pages\img\photos\img3.jpg" />
+    <Content Include="UI\Files\pages\img\photos\img4.jpg" />
+    <Content Include="UI\Files\pages\img\photos\img5.jpg" />
+    <Content Include="UI\Files\pages\img\photos\img6.jpg" />
+    <Content Include="UI\Files\pages\img\pics\img1-large.jpg" />
+    <Content Include="UI\Files\pages\img\pics\img1-medium.jpg" />
+    <Content Include="UI\Files\pages\img\pics\img2-large.jpg" />
+    <Content Include="UI\Files\pages\img\pics\img2-large_bk.jpg" />
+    <Content Include="UI\Files\pages\img\pics\img2-medium.jpg" />
+    <Content Include="UI\Files\pages\img\pics\img2-medium_bk.jpg" />
+    <Content Include="UI\Files\pages\img\posts\img1.jpg" />
+    <Content Include="UI\Files\pages\img\posts\img2.jpg" />
+    <Content Include="UI\Files\pages\img\posts\img3.jpg" />
+    <Content Include="UI\Files\pages\img\product1.jpg" />
+    <Content Include="UI\Files\pages\img\product1big.jpg" />
+    <Content Include="UI\Files\pages\img\products\k1.jpg" />
+    <Content Include="UI\Files\pages\img\products\k2.jpg" />
+    <Content Include="UI\Files\pages\img\products\k3.jpg" />
+    <Content Include="UI\Files\pages\img\products\k4.jpg" />
+    <Content Include="UI\Files\pages\img\products\model1.jpg" />
+    <Content Include="UI\Files\pages\img\products\model2.jpg" />
+    <Content Include="UI\Files\pages\img\products\model3.jpg" />
+    <Content Include="UI\Files\pages\img\products\model4.jpg" />
+    <Content Include="UI\Files\pages\img\products\model5.jpg" />
+    <Content Include="UI\Files\pages\img\products\model6.jpg" />
+    <Content Include="UI\Files\pages\img\products\model7.jpg" />
+    <Content Include="UI\Files\pages\img\products\p1.jpg" />
+    <Content Include="UI\Files\pages\img\products\p2.jpg" />
+    <Content Include="UI\Files\pages\img\products\p3.jpg" />
+    <Content Include="UI\Files\pages\img\products\p4.jpg" />
+    <Content Include="UI\Files\pages\img\products\p5.jpg" />
+    <Content Include="UI\Files\pages\img\products\p6.jpg" />
+    <Content Include="UI\Files\pages\img\products\p7.jpg" />
+    <Content Include="UI\Files\pages\img\sale.png" />
+    <Content Include="UI\Files\pages\img\shop-slider\slide1\bg.jpg" />
+    <Content Include="UI\Files\pages\img\shop-slider\slide2\bg.jpg" />
+    <Content Include="UI\Files\pages\img\shop-slider\slide2\price.png" />
+    <Content Include="UI\Files\pages\img\shop-slider\slide3\bg.jpg" />
+    <Content Include="UI\Files\pages\img\shop-slider\slide4\bg.jpg" />
+    <Content Include="UI\Files\pages\img\shop-slider\slide4\buy.png" />
+    <Content Include="UI\Files\pages\img\shop-slider\slide4\price.png" />
+    <Content Include="UI\Files\pages\img\shop-slider\slide4\title.png" />
+    <Content Include="UI\Files\pages\img\social\aboutme.png" />
+    <Content Include="UI\Files\pages\img\social\amazon.png" />
+    <Content Include="UI\Files\pages\img\social\behance.png" />
+    <Content Include="UI\Files\pages\img\social\blogger.png" />
+    <Content Include="UI\Files\pages\img\social\deviantart.png" />
+    <Content Include="UI\Files\pages\img\social\dribbble.png" />
+    <Content Include="UI\Files\pages\img\social\dropbox.png" />
+    <Content Include="UI\Files\pages\img\social\evernote.png" />
+    <Content Include="UI\Files\pages\img\social\facebook.png" />
+    <Content Include="UI\Files\pages\img\social\flickr.png" />
+    <Content Include="UI\Files\pages\img\social\forrst.png" />
+    <Content Include="UI\Files\pages\img\social\foursquare.png" />
+    <Content Include="UI\Files\pages\img\social\github.png" />
+    <Content Include="UI\Files\pages\img\social\googleplus.png" />
+    <Content Include="UI\Files\pages\img\social\gravatar.png" />
+    <Content Include="UI\Files\pages\img\social\instagram.png" />
+    <Content Include="UI\Files\pages\img\social\jolicloud.png" />
+    <Content Include="UI\Files\pages\img\social\klout.png" />
+    <Content Include="UI\Files\pages\img\social\last-fm.png" />
+    <Content Include="UI\Files\pages\img\social\linkedin.png" />
+    <Content Include="UI\Files\pages\img\social\myspace.png" />
+    <Content Include="UI\Files\pages\img\social\picasa.png" />
+    <Content Include="UI\Files\pages\img\social\pintrest.png" />
+    <Content Include="UI\Files\pages\img\social\quora.png" />
+    <Content Include="UI\Files\pages\img\social\reddit.png" />
+    <Content Include="UI\Files\pages\img\social\rss.png" />
+    <Content Include="UI\Files\pages\img\social\skype.png" />
+    <Content Include="UI\Files\pages\img\social\spotify.png" />
+    <Content Include="UI\Files\pages\img\social\stumbleupon.png" />
+    <Content Include="UI\Files\pages\img\social\tumblr.png" />
+    <Content Include="UI\Files\pages\img\social\twitter.png" />
+    <Content Include="UI\Files\pages\img\social\vimeo.png" />
+    <Content Include="UI\Files\pages\img\social\vk.png" />
+    <Content Include="UI\Files\pages\img\social\wordpress.png" />
+    <Content Include="UI\Files\pages\img\social\xing.png" />
+    <Content Include="UI\Files\pages\img\social\yahoo.png" />
+    <Content Include="UI\Files\pages\img\social\youtube.png" />
+    <Content Include="UI\Files\pages\img\step3-angle-right.png" />
+    <Content Include="UI\Files\pages\img\title-bg\1.jpg" />
+    <Content Include="UI\Files\pages\img\title-bg\man.jpg" />
+    <Content Include="UI\Files\pages\img\title-bg\woman.jpg" />
+    <Content Include="UI\Files\pages\img\works\img1.jpg" />
+    <Content Include="UI\Files\pages\img\works\img2.jpg" />
+    <Content Include="UI\Files\pages\img\works\img3.jpg" />
+    <Content Include="UI\Files\pages\img\works\img4.jpg" />
+    <Content Include="UI\Files\pages\img\works\img5.jpg" />
+    <Content Include="UI\Files\pages\img\works\img6.jpg" />
+    <Content Include="UI\Files\pages\scripts\bs-carousel.js" />
+    <Content Include="UI\Files\pages\scripts\checkout.js" />
+    <Content Include="UI\Files\pages\scripts\contact-us.js" />
+    <Content Include="UI\Files\pages\scripts\portfolio.js" />
+    <Content Include="UI\Files\plugins\bootstrap-touchspin\bootstrap.touchspin.css" />
+    <Content Include="UI\Files\plugins\bootstrap-touchspin\bootstrap.touchspin.js" />
+    <Content Include="UI\Files\plugins\bootstrap-touchspin\bootstrap.touchspin.min.css" />
+    <Content Include="UI\Files\plugins\bootstrap-touchspin\bootstrap.touchspin.min.js" />
+    <Content Include="UI\Files\plugins\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="UI\Files\plugins\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="UI\Files\plugins\bootstrap\css\bootstrap.css" />
+    <Content Include="UI\Files\plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="UI\Files\plugins\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="UI\Files\plugins\bootstrap\js\bootstrap.js" />
+    <Content Include="UI\Files\plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="UI\Files\plugins\bootstrap\js\npm.js" />
+    <Content Include="UI\Files\plugins\excanvas.min.js" />
+    <Content Include="UI\Files\plugins\fancybox\.gitattributes" />
+    <Content Include="UI\Files\plugins\fancybox\CHANGELOG.txt" />
+    <Content Include="UI\Files\plugins\fancybox\demo\1_b.jpg" />
+    <Content Include="UI\Files\plugins\fancybox\demo\1_s.jpg" />
+    <Content Include="UI\Files\plugins\fancybox\demo\2_b.jpg" />
+    <Content Include="UI\Files\plugins\fancybox\demo\2_s.jpg" />
+    <Content Include="UI\Files\plugins\fancybox\demo\3_b.jpg" />
+    <Content Include="UI\Files\plugins\fancybox\demo\3_s.jpg" />
+    <Content Include="UI\Files\plugins\fancybox\demo\4_b.jpg" />
+    <Content Include="UI\Files\plugins\fancybox\demo\4_s.jpg" />
+    <Content Include="UI\Files\plugins\fancybox\demo\5_b.jpg" />
+    <Content Include="UI\Files\plugins\fancybox\demo\5_s.jpg" />
+    <Content Include="UI\Files\plugins\fancybox\demo\ajax.txt" />
+    <Content Include="UI\Files\plugins\fancybox\demo\iframe.html" />
+    <Content Include="UI\Files\plugins\fancybox\demo\index.html" />
+    <Content Include="UI\Files\plugins\fancybox\lib\jquery-1.8.2.min.js" />
+    <Content Include="UI\Files\plugins\fancybox\lib\jquery.mousewheel-3.0.6.pack.js" />
+    <Content Include="UI\Files\plugins\fancybox\README.txt" />
+    <Content Include="UI\Files\plugins\fancybox\source\blank.gif" />
+    <Content Include="UI\Files\plugins\fancybox\source\fancybox_loading.gif" />
+    <Content Include="UI\Files\plugins\fancybox\source\fancybox_overlay.png" />
+    <Content Include="UI\Files\plugins\fancybox\source\fancybox_sprite.png" />
+    <Content Include="UI\Files\plugins\fancybox\source\helpers\fancybox_buttons.png" />
+    <Content Include="UI\Files\plugins\fancybox\source\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="UI\Files\plugins\fancybox\source\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="UI\Files\plugins\fancybox\source\helpers\jquery.fancybox-media.js" />
+    <Content Include="UI\Files\plugins\fancybox\source\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="UI\Files\plugins\fancybox\source\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="UI\Files\plugins\fancybox\source\jquery.fancybox.css" />
+    <Content Include="UI\Files\plugins\fancybox\source\jquery.fancybox.js" />
+    <Content Include="UI\Files\plugins\fancybox\source\jquery.fancybox.pack.js" />
+    <Content Include="UI\Files\plugins\font-awesome\css\font-awesome.css" />
+    <Content Include="UI\Files\plugins\font-awesome\css\font-awesome.min.css" />
+    <Content Include="UI\Files\plugins\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="UI\Files\plugins\gmaps\gmaps.js" />
+    <Content Include="UI\Files\plugins\gmaps\gmaps.min.js" />
+    <Content Include="UI\Files\plugins\holder.js" />
+    <Content Include="UI\Files\plugins\jquery-migrate.min.js" />
+    <Content Include="UI\Files\plugins\jquery-mixitup\.gitignore" />
+    <Content Include="UI\Files\plugins\jquery-mixitup\jquery.mixitup.min.js" />
+    <Content Include="UI\Files\plugins\jquery-slimscroll\jquery.slimscroll.js" />
+    <Content Include="UI\Files\plugins\jquery-slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="UI\Files\plugins\jquery.blockui.min.js" />
+    <Content Include="UI\Files\plugins\jquery.cokie.min.js" />
+    <Content Include="UI\Files\plugins\jquery.easing.js" />
+    <Content Include="UI\Files\plugins\jquery.min.js" />
+    <Content Include="UI\Files\plugins\jquery.parallax.js" />
+    <Content Include="UI\Files\plugins\jquery.scrollTo.min.js" />
+    <Content Include="UI\Files\plugins\moment.min.js" />
+    <Content Include="UI\Files\plugins\owl.carousel\assets\owl.carousel.css" />
+    <Content Include="UI\Files\plugins\owl.carousel\owl.carousel.js" />
+    <Content Include="UI\Files\plugins\owl.carousel\owl.carousel.min.js" />
+    <Content Include="UI\Files\plugins\rateit\example\content\antenna-black.png" />
+    <Content Include="UI\Files\plugins\rateit\example\content\antenna-red.png" />
+    <Content Include="UI\Files\plugins\rateit\example\content\antenna-yellow.png" />
+    <Content Include="UI\Files\plugins\rateit\example\content\antenna.css" />
+    <Content Include="UI\Files\plugins\rateit\example\content\bigstars.css" />
+    <Content Include="UI\Files\plugins\rateit\example\content\star-black32.png" />
+    <Content Include="UI\Files\plugins\rateit\example\content\star-gold32.png" />
+    <Content Include="UI\Files\plugins\rateit\example\content\star-red32.png" />
+    <Content Include="UI\Files\plugins\rateit\example\content\star-white32.png" />
+    <Content Include="UI\Files\plugins\rateit\example\content\star_2.gif" />
+    <Content Include="UI\Files\plugins\rateit\example\content\star_3.gif" />
+    <Content Include="UI\Files\plugins\rateit\example\content\star_4.gif" />
+    <Content Include="UI\Files\plugins\rateit\example\example.htm" />
+    <Content Include="UI\Files\plugins\rateit\example\rateit.aspx" />
+    <Content Include="UI\Files\plugins\rateit\example\sh\shBrushCSharp.js" />
+    <Content Include="UI\Files\plugins\rateit\example\sh\shBrushCss.js" />
+    <Content Include="UI\Files\plugins\rateit\example\sh\shBrushJScript.js" />
+    <Content Include="UI\Files\plugins\rateit\example\sh\shBrushXml.js" />
+    <Content Include="UI\Files\plugins\rateit\example\sh\shCore.css" />
+    <Content Include="UI\Files\plugins\rateit\example\sh\shCore.js" />
+    <Content Include="UI\Files\plugins\rateit\example\sh\shCoreDefault.css" />
+    <Content Include="UI\Files\plugins\rateit\src\delete.gif" />
+    <Content Include="UI\Files\plugins\rateit\src\jquery.rateit.js" />
+    <Content Include="UI\Files\plugins\rateit\src\jquery.rateit.min.js" />
+    <Content Include="UI\Files\plugins\rateit\src\rateit.css" />
+    <Content Include="UI\Files\plugins\rateit\src\star.gif" />
+    <Content Include="UI\Files\plugins\respond.min.js" />
+    <Content Include="UI\Files\plugins\simple-line-icons\fonts\Simple-Line-Icons.dev.svg" />
+    <Content Include="UI\Files\plugins\simple-line-icons\fonts\Simple-Line-Icons.svg" />
+    <Content Include="UI\Files\plugins\simple-line-icons\icons-lte-ie7.js" />
+    <Content Include="UI\Files\plugins\simple-line-icons\License.txt" />
+    <Content Include="UI\Files\plugins\simple-line-icons\Readme.txt" />
+    <Content Include="UI\Files\plugins\simple-line-icons\simple-line-icons.css" />
+    <Content Include="UI\Files\plugins\simple-line-icons\simple-line-icons.min.css" />
+    <Content Include="UI\Files\plugins\smooth-scroll\smooth-scroll.js" />
+    <Content Include="UI\Files\plugins\uniform\css\uniform.default.css" />
+    <Content Include="UI\Files\plugins\uniform\css\uniform.default.min.css" />
+    <Content Include="UI\Files\plugins\uniform\images\bg-input-focus.png" />
+    <Content Include="UI\Files\plugins\uniform\images\bg-input.png" />
+    <Content Include="UI\Files\plugins\uniform\images\sprite.png" />
+    <Content Include="UI\Files\plugins\uniform\images\sprite_original.png" />
+    <Content Include="UI\Files\plugins\uniform\jquery.uniform.js" />
+    <Content Include="UI\Files\plugins\uniform\jquery.uniform.min.js" />
+    <Content Include="UI\Files\plugins\zoom\jquery.zoom.js" />
+    <Content Include="UI\Files\plugins\zoom\jquery.zoom.min.js" />
+    <Content Include="UI\Files\resume.min.css" />
+    <Content Include="UI\Files\simple-line-icons\css\simple-line-icons.css" />
+    <Content Include="UI\FioranoApiManagement.html" />
+    <Content Include="UI\FioranoIntegration.html" />
+    <Content Include="UI\FioranoMQ.html" />
+    <Content Include="UI\Help.html" />
+    <Content Include="UI\Images\download.png" />
+    <Content Include="UI\Js\angular.js" />
+    <Content Include="UI\Js\bootstrap.min.js" />
+    <Content Include="UI\Js\CheckOut.js" />
+    <Content Include="UI\Js\Payments.js" />
+    <Content Include="UI\Js\Types.js" />
+    <Content Include="UI\Js\ngStorage.js" />
+    <Content Include="UI\Js\Registration.js" />
+    <Content Include="UI\Js\ui-bootstrap-tpls-1.3.3.js" />
+    <Content Include="UI\Licenses.html" />
+    <Content Include="UI\Payments.html" />
+    <Content Include="UI\Products.html" />
+    <Content Include="UI\QuickIntegration.html" />
+    <Content Include="UI\Registation.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\LgTraceWriterController.cs" />
+    <Compile Include="Controllers\LicensesController.cs" />
+    <Compile Include="Controllers\PaymentsController.cs" />
+    <Compile Include="Controllers\RegistrationController.cs" />
+    <Compile Include="Controllers\TypesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="UI\Files\plugins\bootstrap-touchspin\LICENSE.md" />
+    <Content Include="UI\Files\plugins\bootstrap-touchspin\README.md" />
+    <Content Include="UI\Files\plugins\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="UI\Files\plugins\bootstrap\css\bootstrap.css.map" />
+    <Content Include="UI\Files\plugins\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="UI\Files\plugins\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="UI\Files\plugins\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="UI\Files\plugins\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="UI\Files\plugins\fancybox\CHANGELOG.md" />
+    <Content Include="UI\Files\plugins\fancybox\README.md" />
+    <Content Include="UI\Files\plugins\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="UI\Files\plugins\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="UI\Files\plugins\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="UI\Files\plugins\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="UI\Files\plugins\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="UI\Files\plugins\font-awesome\less\animated.less" />
+    <Content Include="UI\Files\plugins\font-awesome\less\bordered-pulled.less" />
+    <Content Include="UI\Files\plugins\font-awesome\less\core.less" />
+    <Content Include="UI\Files\plugins\font-awesome\less\fixed-width.less" />
+    <Content Include="UI\Files\plugins\font-awesome\less\font-awesome.less" />
+    <Content Include="UI\Files\plugins\font-awesome\less\icons.less" />
+    <Content Include="UI\Files\plugins\font-awesome\less\larger.less" />
+    <Content Include="UI\Files\plugins\font-awesome\less\list.less" />
+    <Content Include="UI\Files\plugins\font-awesome\less\mixins.less" />
+    <Content Include="UI\Files\plugins\font-awesome\less\path.less" />
+    <Content Include="UI\Files\plugins\font-awesome\less\rotated-flipped.less" />
+    <Content Include="UI\Files\plugins\font-awesome\less\stacked.less" />
+    <Content Include="UI\Files\plugins\font-awesome\less\variables.less" />
+    <Content Include="UI\Files\plugins\font-awesome\scss\font-awesome.scss" />
+    <Content Include="UI\Files\plugins\font-awesome\scss\_animated.scss" />
+    <Content Include="UI\Files\plugins\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="UI\Files\plugins\font-awesome\scss\_core.scss" />
+    <Content Include="UI\Files\plugins\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="UI\Files\plugins\font-awesome\scss\_icons.scss" />
+    <Content Include="UI\Files\plugins\font-awesome\scss\_larger.scss" />
+    <Content Include="UI\Files\plugins\font-awesome\scss\_list.scss" />
+    <Content Include="UI\Files\plugins\font-awesome\scss\_mixins.scss" />
+    <Content Include="UI\Files\plugins\font-awesome\scss\_path.scss" />
+    <Content Include="UI\Files\plugins\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="UI\Files\plugins\font-awesome\scss\_stacked.scss" />
+    <Content Include="UI\Files\plugins\font-awesome\scss\_variables.scss" />
+    <Content Include="UI\Files\plugins\gmaps\README.md" />
+    <Content Include="UI\Files\plugins\jquery-mixitup\bower.json" />
+    <Content Include="UI\Files\plugins\jquery-mixitup\mixitup.jquery.json" />
+    <Content Include="UI\Files\plugins\jquery-mixitup\README.md" />
+    <Content Include="UI\Files\plugins\jquery-slimscroll\README.md" />
+    <Content Include="UI\Files\plugins\jquery-slimscroll\slimScroll.jquery.json" />
+    <Content Include="UI\Files\plugins\jquery.min.map" />
+    <Content Include="UI\Files\plugins\rateit\src\jquery.rateit.min.js.map" />
+    <Content Include="UI\Files\plugins\simple-line-icons\fonts\Simple-Line-Icons.eot" />
+    <Content Include="UI\Files\plugins\simple-line-icons\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="UI\Files\plugins\simple-line-icons\fonts\Simple-Line-Icons.woff" />
+    <Content Include="UI\Files\plugins\uniform\css\uniform.default.scss" />
+    <Content Include="UI\Files\plugins\uniform\README.md" />
+    <Content Include="UI\Files\devicons\css\devicons.scss" />
+    <Content Include="UI\Files\devicons\fonts\devicons.eot" />
+    <Content Include="UI\Files\devicons\fonts\devicons.svg" />
+    <Content Include="UI\Files\devicons\fonts\devicons.ttf" />
+    <Content Include="UI\Files\devicons\fonts\devicons.woff" />
+    <Content Include="UI\Files\simple-line-icons\fonts\Simple-Line-Icons.eot" />
+    <Content Include="UI\Files\simple-line-icons\fonts\Simple-Line-Icons.svg" />
+    <Content Include="UI\Files\simple-line-icons\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="UI\Files\simple-line-icons\fonts\Simple-Line-Icons.woff" />
+    <Content Include="UI\Files\simple-line-icons\fonts\Simple-Line-Icons.woff2" />
+    <Content Include="UI\Files\simple-line-icons\less\simple-line-icons.less" />
+    <Content Include="UI\Files\simple-line-icons\scss\simple-line-icons.scss" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3079</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:3079/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,674 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Metronic Frontend (Header Fixed)</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="Metronic Shop UI description" name="description">
+    <meta content="Metronic Shop UI keywords" name="keywords">
+    <meta content="keenthemes" name="author">
+    <meta property="og:site_name" content="-CUSTOMER VALUE-">
+    <meta property="og:title" content="-CUSTOMER VALUE-">
+    <meta property="og:description" content="-CUSTOMER VALUE-">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="-CUSTOMER VALUE-"><!-- link to image for socio -->
+    <meta property="og:url" content="-CUSTOMER VALUE-">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Fonts START -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|PT+Sans+Narrow|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css">
+    <!-- Fonts END -->
+    <!-- Global styles START -->
+    <link href="Files/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="Files/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Page level plugin styles START -->
+    <link href="Files/pages/css/animate.css" rel="stylesheet" />
+    <link href="Files/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet" />
+    <link href="Files/plugins/owl.carousel/assets/owl.carousel.css" rel="stylesheet" />
+
+    <!-- Page level plugin styles END -->
+    <!-- Theme styles START -->
+    <link href="Files/pages/css/components.css" rel="stylesheet" />
+    <link href="Files/pages/css/slider.css" rel="stylesheet" />
+    <link href="Files/corporate/css/style.css" rel="stylesheet" />
+    <link href="Files/corporate/css/style-responsive.css" rel="stylesheet" />
+    <link href="Files/corporate/css/themes/red.css" rel="stylesheet" />
+    <link href="Files/corporate/css/custom.css" rel="stylesheet" />
+    <link href="Files/pages/css/portfolio.css" rel="stylesheet" />
+    <!-- Theme styles END -->
+    <style>
+        html {
+            font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            font-size: 14px;
+        }
+
+        h5 {
+            font-size: 1.28571429em;
+            font-weight: 700;
+            line-height: 1.2857em;
+            margin: 0;
+        }
+
+        .card {
+            font-size: 1em;
+            overflow: hidden;
+            padding: 0;
+            border: none;
+            border-radius: .28571429rem;
+            box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+        }
+
+        .card-block {
+            font-size: 1em;
+            position: relative;
+            margin: 0;
+            padding: 1em;
+            border: none;
+            border-top: 1px solid rgba(34, 36, 38, .1);
+            box-shadow: none;
+        }
+
+        .card-img-top {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .card-title {
+            font-size: 1.28571429em;
+            font-weight: 700;
+            line-height: 1.2857em;
+        }
+
+        .card-text {
+            clear: both;
+            margin-top: .5em;
+            color: rgba(0, 0, 0, .68);
+        }
+
+        .card-footer {
+            font-size: 1em;
+            position: static;
+            top: 0;
+            left: 0;
+            max-width: 100%;
+            padding: .75em 1em;
+            color: rgba(0, 0, 0, .4);
+            border-top: 1px solid rgba(0, 0, 0, .05) !important;
+            background: #fff;
+        }
+
+        .card-inverse .btn {
+            border: 1px solid rgba(0, 0, 0, .05);
+        }
+
+        .profile {
+            position: absolute;
+            top: -12px;
+            display: inline-block;
+            overflow: hidden;
+            box-sizing: border-box;
+            width: 25px;
+            height: 25px;
+            margin: 0;
+            border: 1px solid #fff;
+            border-radius: 50%;
+        }
+
+        .profile-avatar {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        .profile-inline {
+            position: relative;
+            top: 0;
+            display: inline-block;
+        }
+
+            .profile-inline ~ .card-title {
+                display: inline-block;
+                margin-left: 4px;
+                vertical-align: top;
+            }
+
+        .text-bold {
+            font-weight: 700;
+        }
+
+        .meta {
+            font-size: 1em;
+            color: rgba(0, 0, 0, .4);
+        }
+
+            .meta a {
+                text-decoration: none;
+                color: rgba(0, 0, 0, .4);
+            }
+
+                .meta a:hover {
+                    color: rgba(0, 0, 0, .87);
+                }
+
+        .product_view .modal-dialog {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .pre-cost {
+            text-decoration: line-through;
+            color: #a5a5a5;
+        }
+
+        .space-ten {
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<!-- Head END -->
+<!-- Body BEGIN -->
+<body class="corporate" ng-app="myApp" ng-controller="myCtrl" ng-init="getTypes()" ng-model="TypeGroups">
+
+    
+    <!-- BEGIN STYLE CUSTOMIZER -->
+    <div class="color-panel hidden-sm">
+        <div class="color-mode-icons icon-color"></div>
+        <div class="color-mode-icons icon-color-close"></div>
+        <div class="color-mode">
+            <p>THEME COLOR</p>
+            <ul class="inline">
+                <li class="color-red current color-default" data-style="red"></li>
+                <li class="color-blue" data-style="blue"></li>
+                <li class="color-green" data-style="green"></li>
+                <li class="color-orange" data-style="orange"></li>
+                <li class="color-gray" data-style="gray"></li>
+                <li class="color-turquoise" data-style="turquoise"></li>
+            </ul>
+        </div>
+    </div>
+    <!-- END BEGIN STYLE CUSTOMIZER -->
+    <!-- BEGIN TOP BAR -->
+    <div class="pre-header">
+        <div class="container">
+            <div class="row">
+                <!-- BEGIN TOP BAR LEFT PART -->
+                <div class="col-md-6 col-sm-6 additional-shop-info">
+                    <ul class="list-unstyled list-inline">
+                        <li><i class="fa fa-phone"></i><span>+1 456 6717</span></li>
+                        <li><i class="fa fa-envelope-o"></i><span>info@keenthemes.com</span></li>
+                    </ul>
+                </div>
+                <!-- END TOP BAR LEFT PART -->
+                <!-- BEGIN TOP BAR MENU -->
+                <div class="col-md-6 col-sm-6 additional-nav">
+                    <ul class="list-unstyled list-inline pull-right">
+                        <li><a href="page-login.html">Log In</a></li>
+                        <li><a href="Registation.html">Registration</a></li>
+                    </ul>
+                </div>
+                <!-- END TOP BAR MENU -->
+            </div>
+        </div>
+    </div>
+    <!-- END TOP BAR -->
+    <!-- BEGIN HEADER -->
+    <div class="header">
+        <div class="container">
+
+            <a class="site-logo" href="../Index.html"><img src="Files/corporate/img/logos/logo-corp-red.png" alt="Metronic FrontEnd"></a>
+            <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
+            <!-- BEGIN NAVIGATION -->
+            <div class="header-navigation pull-right font-transform-inherit">
+                <ul>
+                    <li class="dropdown active">
+                        <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="../Index.html">
+                            Home
+
+                        </a>
+
+                        <!--<ul class="dropdown-menu">
+                            <li><a href="index.html">Home Default</a></li>
+                            <li class="active"><a href="index-header-fix.html">Home with Header Fixed</a></li>
+                            <li><a href="index-without-topbar.html">Home without Top Bar</a></li>
+                        </ul>-->
+                    </li>
+                    <li class="dropdown dropdown-megamenu">
+                        <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
+                            Products
+
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="header-navigation-content">
+                                    <div class="row">
+                                        <div class="col-md-4 header-navigation-col">
+                                            <h4>Footwear</h4>
+                                            <ul>
+                                                <li><a href="index.html">Astro Trainers</a></li>
+                                                <li><a href="index.html">Basketball Shoes</a></li>
+                                                <li><a href="index.html">Boots</a></li>
+                                                <li><a href="index.html">Canvas Shoes</a></li>
+                                                <li><a href="index.html">Football Boots</a></li>
+                                                <li><a href="index.html">Golf Shoes</a></li>
+                                                <li><a href="index.html">Hi Tops</a></li>
+                                                <li><a href="index.html">Indoor Trainers</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4 header-navigation-col">
+                                            <h4>Clothing</h4>
+                                            <ul>
+                                                <li><a href="index.html">Base Layer</a></li>
+                                                <li><a href="index.html">Character</a></li>
+                                                <li><a href="index.html">Chinos</a></li>
+                                                <li><a href="index.html">Combats</a></li>
+                                                <li><a href="index.html">Cricket Clothing</a></li>
+                                                <li><a href="index.html">Fleeces</a></li>
+                                                <li><a href="index.html">Gilets</a></li>
+                                                <li><a href="index.html">Golf Tops</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4 header-navigation-col">
+                                            <h4>Accessories</h4>
+                                            <ul>
+                                                <li><a href="index.html">Belts</a></li>
+                                                <li><a href="index.html">Caps</a></li>
+                                                <li><a href="index.html">Gloves</a></li>
+                                            </ul>
+                                            <h4>Clearance</h4>
+                                            <ul>
+                                                <li><a href="index.html">Jackets</a></li>
+                                                <li><a href="index.html">Bottoms</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
+                            Solutions
+
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a href="page-about.html">About Us</a></li>
+                            <li><a href="page-services.html">Services</a></li>
+                            <li><a href="page-prices.html">Prices</a></li>
+                            <li><a href="page-faq.html">FAQ</a></li>
+                            <li><a href="page-gallery.html">Gallery</a></li>
+                            <li><a href="page-search-result.html">Search Result</a></li>
+                            <li><a href="page-404.html">404</a></li>
+                            <li><a href="page-500.html">500</a></li>
+                            <li><a href="page-login.html">Login Page</a></li>
+                            <li><a href="page-forgotton-password.html">Forget Password</a></li>
+                            <li><a href="page-reg-page.html">Signup Page</a></li>
+                            <li><a href="page-careers.html">Careers</a></li>
+                            <li><a href="page-site-map.html">Site Map</a></li>
+                            <li><a href="page-contacts.html">Contact</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
+                            Services
+
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-submenu">
+                                <a href="APIs.html">API's <i class="fa fa-angle-right"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="index.html">Second Level Link</a></li>
+                                    <li><a href="index.html">Second Level Link</a></li>
+                                    <li class="dropdown-submenu">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
+                                            Second Level Link
+                                            <i class="fa fa-angle-right"></i>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="index.html">Third Level Link</a></li>
+                                            <li><a href="index.html">Third Level Link</a></li>
+                                            <li><a href="index.html">Third Level Link</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
+                            Costomers
+
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a href="portfolio-4.html">Portfolio 4</a></li>
+                            <li><a href="portfolio-3.html">Portfolio 3</a></li>
+                            <li><a href="portfolio-2.html">Portfolio 2</a></li>
+                            <li><a href="portfolio-item.html">Portfolio Item</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
+                            Partners
+
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a href="blog.html">Blog Page</a></li>
+                            <li><a href="blog-item.html">Blog Item</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
+                            Resources
+
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a href="blog.html">Blog Page</a></li>
+                            <li><a href="blog-item.html">Blog Item</a></li>
+                        </ul>
+                    </li>
+
+
+
+                    <!-- BEGIN TOP SEARCH -->
+                    <li class="menu-search">
+                        <span class="sep"></span>
+                        <i class="fa fa-search search-btn"></i>
+                        <div class="search-box">
+                            <form action="#">
+                                <div class="input-group">
+                                    <input type="text" placeholder="Search" class="form-control">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary" type="submit">Search</button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                    </li>
+                    <!-- END TOP SEARCH -->
+                </ul>
+            </div>
+            <!-- END NAVIGATION -->
+        </div>
+    </div>
+    <!-- Header END -->
+    <div class="main">
+
+        <div class="container" >
+            <!--<div class="row">
+            <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                <div class="card">
+                    <img class="card-img-top" src="https://clixmatic.net/banners/image/15/xemisky">
+                    <div class="card-block">
+                        <h5 class="text-bold">ClixMatic</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                <div class="card">
+                    <img class="card-img-top" src="https://clixmatic.net/banners/image/15/xemisky">
+                    <div class="card-block">
+                        <h4 class="card-title">Clixmatic</h4>
+                        <div class="meta">
+                            <a href="#">Friends</a>
+                        </div>
+                        <div class="card-text">
+                            <ul>1</ul><ul>2</ul>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="float-right">Joined in 2013</span>
+                        <span><i class=""></i>75 Friends</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                <div class="card">
+                    <img class="card-img-top" src="https://clixmatic.net/banners/image/15/xemisky">
+                    <p class="card-block">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam velit quisquam veniam excepturi temporibus inventore corporis dicta sit culpa veritatis placeat earum, dolorum asperiores, delectus dolore voluptatibus, at magnam nobis!
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                <div class="card">
+                    <img class="card-img-top" src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif">
+                    <div class="card-block">
+                        <h4 class="card-title mt-3">Tawshif Ahsan Khan</h4>
+                        <div class="meta">
+                            <a>Friends</a>
+                        </div>
+                        <div class="card-text">
+                            Tawshif is a web designer living in Bangladesh.
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <small>Last updated 3 mins ago</small>
+                        <button class="btn btn-secondary float-right btn-sm">show</button>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+            <div class="row mb-5">
+                <!--<div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                <div class="card card-inverse card-primary ">
+                    <img class="card-img-top" src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif">
+                    <blockquote class="card-blockquote p-3">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+                        <footer>
+                            <small>
+                                Someone famous in <cite title="Source Title">Source Title</cite>
+                            </small>
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>-->
+                <div class="col-sm-6 col-md-4 col-lg-3 mt-4" ng-repeat="L in TypeGroups">
+                    <div class="card card-inverse card-info">
+                        <img class="card-img-top" src="images/download.png" style="width:300px;height:200px;" />
+
+
+                        <div class="card-block">
+                            <figure class="profile">
+                                <img src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" class="profile-avatar" alt="">
+                            </figure>
+                            <h4 class="card-title mt-3">{{L.Name}}</h4>                            
+                            <div class="meta card-text">
+                                <a>{{L.Description}}</a>
+                            </div><br />
+                            <h6>This License Provides Services for :</h6>
+                            <div class="card-text" ng-repeat="T in TypeGroups1">
+                                
+                                <ul>*{{T.Name}} </ul>
+                              
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <small>Click Here To Buy the License</small>
+                            <button class="btn btn-info float-right btn-sm" data-toggle="modal" data-target="#product_view">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--<div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                <div class="card card-inverse card-info">
+                    <img class="card-img-top" src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif">
+                    <div class="card-block">
+                        <figure class="profile profile-inline">
+                            <img src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" class="profile-avatar" alt="">
+                        </figure>
+                        <h4 class="card-title">Tawshif Ahsan Khan</h4>
+                        <div class="card-text">
+                            Tawshif is a web designer living in Bangladesh.
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <small>Last updated 3 mins ago</small>
+                        <button class="btn btn-info float-right btn-sm">Follow</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+                <div class="card card-inverse card-info">
+                    <img class="card-img-top" src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif">
+                    <div class="card-block">
+                        <figure class="profile profile-inline">
+                            <img src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" class="profile-avatar" alt="">
+                        </figure>
+                        <h4 class="card-title">Tawshif Ahsan Khan</h4>
+                        <div class="card-text">
+                            Tawshif is a web designer living in Bangladesh.
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-info btn-sm">Follow</button>
+                    </div>
+                </div>
+            </div>-->
+            </div>
+        </div>
+        
+
+        <!-- BEGIN PRE-FOOTER -->
+        <div class="pre-footer">
+            <div class="container">
+                <div class="row">
+                    <!-- BEGIN BOTTOM ABOUT BLOCK -->
+                    <div class="col-md-4 col-sm-6 pre-footer-col">
+                        <h2>About us</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam sit nonummy nibh euismod tincidunt ut laoreet dolore magna aliquarm erat sit volutpat.</p>
+                        <div class="photo-stream">
+                            <h2>Photos Stream</h2>
+                            <ul class="list-unstyled">
+
+                                <li><a href="javascript:;"><img alt="" src="Files/pages/img/people/img5-large.jpg"></a></li>
+                                <li><a href="javascript:;"><img alt="" src="Files/pages/img/works/img1.jpg"></a></li>
+                                <li><a href="javascript:;"><img alt="" src="Files/pages/img/people/img4-large.jpg"></a></li>
+                                <li><a href="javascript:;"><img alt="" src="Files/pages/img/works/img6.jpg"></a></li>
+                                <li><a href="javascript:;"><img alt="" src="Files/pages/img/works/img3.jpg"></a></li>
+                                <li><a href="javascript:;"><img alt="" src="Files/pages/img/people/img2-large.jpg"></a></li>
+                                <li><a href="javascript:;"><img alt="" src="Files/pages/img/works/img2.jpg"></a></li>
+                                <li><a href="javascript:;"><img alt="" src="Files/pages/img/works/img5.jpg"></a></li>
+                                <li><a href="javascript:;"><img alt="" src="Files/pages/img/people/img5-small.jpg"></a></li>
+                                <li><a href="javascript:;"><img alt="" src="Files/pages/img/works/img1.jpg"></a></li>
+                                <li><a href="javascript:;"><img alt="" src="Files/pages/img/people/img4-large.jpg"></a></li>
+                                <li><a href="javascript:;"><img alt="" src="Files/pages/img/works/img6.jpg"></a></li>
+                                <li><a href="javascript:;"><img alt="" src="Files/pages/img/works/img3.jpg"></a></li>
+                                <li><a href="javascript:;"><img alt="" src="Files/pages/img/people/img2-large.jpg"></a></li>
+                                <li><a href="javascript:;"><img alt="" src="Files/pages/img/works/img2.jpg"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- END BOTTOM ABOUT BLOCK -->
+                    <!-- BEGIN BOTTOM CONTACTS -->
+                    <div class="col-md-4 col-sm-6 pre-footer-col">
+                        <h2>Our Contacts</h2>
+                        <address class="margin-bottom-40">
+                            35, Lorem Lis Street, Park Ave<br>
+                            California, US<br>
+                            Phone: 300 323 3456<br>
+                            Fax: 300 323 1456<br>
+                            Email: <a href="mailto:info@metronic.com">info@metronic.com</a><br>
+                            Skype: <a href="skype:metronic">metronic</a>
+                        </address>
+                        <div class="pre-footer-subscribe-box pre-footer-subscribe-box-vertical">
+                            <h2>Newsletter</h2>
+                            <p>Subscribe to our newsletter and stay up to date with the latest news and deals!</p>
+                            <form action="#">
+                                <div class="input-group">
+                                    <input type="text" placeholder="youremail@mail.com" class="form-control">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary" type="submit">Subscribe</button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- END BOTTOM CONTACTS -->
+                    <!-- BEGIN TWITTER BLOCK -->
+                    <div class="col-md-4 col-sm-6 pre-footer-col">
+                        <h2 class="margin-bottom-0">Latest Tweets</h2>
+                        <a class="twitter-timeline" href="https://twitter.com/twitterapi" data-tweet-limit="2" data-theme="dark" data-link-color="#57C8EB" data-widget-id="455411516829736961" data-chrome="noheader nofooter noscrollbar noborders transparent">Loading tweets by @keenthemes...</a>
+                    </div>
+                    <!-- END TWITTER BLOCK -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-----popup----------->
+    <div class="modal fade " id="product_view">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" data-dismiss="modal" class="class pull-right"><span class="glyphicon glyphicon-remove"></span></a>
+                    <h3 class="modal-title">Enter Your Reference Code</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <!--<div class="col-md-6 product_img">
+                            <img src="http://img.bbystatic.com/BestBuy_US/images/products/5613/5613060_sd.jpg" class="img-responsive">
+                        </div>-->
+                        <div class="col-md-6 product_content">
+
+                            <h4>Reference Code: </h4><input type="text" ng-model="FleetOwnerCode" />
+
+
+                            <div class="space-ten"></div>
+                            <div class="btn-ground">
+                                <button type="button" class="btn btn-primary" ng-click="ValidateFOCode(FleetOwnerCode);">Send</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-------popup-------->
+    <!-- END PRE-FOOTER -->
+   
+    <!-- Load javascripts at bottom, this will reduce page load time -->
+    <!-- BEGIN CORE PLUGINS (REQUIRED FOR ALL PAGES) -->
+    <!--[if lt IE 9]>
+    <script src="assets/plugins/respond.min.js"></script>
+    <![endif]-->
+    <script src="Files/plugins/jquery.min.js"></script>
+    <script src="Files/plugins/jquery-migrate.min.js"></script>
+    <script src="Files/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="UI/Files/corporate/scripts/back-to-top.js"></script>
+
+    <!-- END CORE PLUGINS -->
+    <!-- BEGIN PAGE LEVEL JAVASCRIPTS (REQUIRED ONLY FOR CURRENT PAGE) -->
+    <script src="Files/plugins/fancybox/source/jquery.fancybox.pack.js"></script>
+    <script src="Files/plugins/owl.carousel/owl.carousel.min.js"></script>
+    <script src="Files/plugins/jquery-mixitup/jquery.mixitup.min.js"></script>
+    <script src="Files/pages/scripts/portfolio.js"></script>
+
+    <script src="Files/corporate/scripts/layout.js"></script>
+    <script src="Files/pages/scripts/bs-carousel.js"></script>
+    <script src="Js/angular.js"></script>
+    <script src="Js/ngStorage.js"></script>
+    <script src="Js/ui-bootstrap-tpls-1.3.3.js"></script>
+    <script src="Js/Types.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            Layout.init();
+            Layout.initTwitter();
+            Portfolio.init();
+        });
+    </script>
+    <!-- END PAGE LEVEL JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>
