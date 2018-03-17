@@ -76,6 +76,8 @@
     <Content Include="DBScripts\Tables.sql" />
     <Content Include="Global.asax" />
     <Content Include="Index.html" />
+    <Content Include="UI\apis.css" />
+    <Content Include="UI\APIs.html" />
     <Content Include="UI\CheckOut.html" />
     <Content Include="UI\DigitalBusinessPlatform.html" />
     <Content Include="UI\FAQs.html" />
@@ -448,16 +450,19 @@
     <Content Include="UI\Js\angular.js" />
     <Content Include="UI\Js\bootstrap.min.js" />
     <Content Include="UI\Js\CheckOut.js" />
+    <Content Include="UI\Js\Index.js" />
     <Content Include="UI\Js\Payments.js" />
     <Content Include="UI\Js\Types.js" />
     <Content Include="UI\Js\ngStorage.js" />
     <Content Include="UI\Js\Registration.js" />
     <Content Include="UI\Js\ui-bootstrap-tpls-1.3.3.js" />
+    <Content Include="UI\Js\UserProfile.js" />
     <Content Include="UI\Licenses.html" />
     <Content Include="UI\Payments.html" />
     <Content Include="UI\Products.html" />
     <Content Include="UI\QuickIntegration.html" />
     <Content Include="UI\Registation.html" />
+    <Content Include="UI\UserProfile.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

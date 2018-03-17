@@ -1,0 +1,922 @@
+﻿<!--<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html class=''>
+<head>
+    <script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script>
+    <script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script>
+    <script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script>
+    <meta charset='UTF-8'>
+    <meta name="robots" content="noindex">
+    <link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" />
+    <link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" />
+    <link rel="canonical" href="https://codepen.io/iremlopsum/pen/OVMxzp?limit=all&page=80&q=box" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:400,500,800">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css'>
+
+    <!-- Fonts START -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|PT+Sans+Narrow|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css">
+    <!-- Fonts END -->
+    <!-- Global styles START -->
+    <link href="Files/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="Files/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Page level plugin styles START -->
+    <link href="Files/pages/css/animate.css" rel="stylesheet" />
+    <link href="Files/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet" />
+    <link href="Files/plugins/owl.carousel/assets/owl.carousel.css" rel="stylesheet" />
+
+    <!-- Page level plugin styles END -->
+    <!-- Theme styles START -->
+    <link href="Files/pages/css/components.css" rel="stylesheet" />
+    <link href="Files/pages/css/slider.css" rel="stylesheet" />
+    <link href="Files/corporate/css/style.css" rel="stylesheet" />
+    <link href="Files/corporate/css/style-responsive.css" rel="stylesheet" />
+    <link href="Files/corporate/css/themes/red.css" rel="stylesheet" />
+    <link href="Files/corporate/css/custom.css" rel="stylesheet" />
+    <link href="Files/pages/css/portfolio.css" rel="stylesheet" />
+    <style class="cp-pen-styles">
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #eee;
+            font-family: 'Raleway';
+        }
+
+        ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .icon {
+            position: relative;
+            width: 32px;
+            height: 32px;
+            display: block;
+            fill: rgba(51, 51, 51, 0.5);
+            margin-right: 20px;
+            -webkit-transition: all .2s ease-out;
+            transition: all .2s ease-out;
+        }
+
+            .icon.active {
+                fill: #E74C3C;
+            }
+
+            .icon.big {
+                width: 64px;
+                height: 64px;
+                fill: rgba(51, 51, 51, 0.5);
+            }
+
+        #wrapper {
+            width: 900px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            background-color: #fff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: left;
+            -ms-flex-pack: left;
+            justify-content: left;
+            overflow: hidden;
+        }
+
+        #left-side {
+            height: 70%;
+            width: 25%;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+
+            #left-side ul li {
+                padding-top: 10px;
+                padding-bottom: 10px;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                line-height: 34px;
+                color: rgba(51, 51, 51, 0.5);
+                font-weight: 500;
+                cursor: pointer;
+                -webkit-transition: all .2s ease-out;
+                transition: all .2s ease-out;
+            }
+
+                #left-side ul li:hover {
+                    color: #333333;
+                    -webkit-transition: all .2s ease-out;
+                    transition: all .2s ease-out;
+                }
+
+                    #left-side ul li:hover > .icon {
+                        fill: #333;
+                    }
+
+                #left-side ul li.active {
+                    color: #333333;
+                }
+
+                    #left-side ul li.active:hover > .icon {
+                        fill: #E74C3C;
+                    }
+
+        #border {
+            height: 288px;
+            width: 1px;
+            background-color: rgba(51, 51, 51, 0.2);
+        }
+
+            #border #line.one {
+                width: 5px;
+                height: 54px;
+                background-color: #E74C3C;
+                margin-left: -2px;
+                margin-top: 35px;
+                -webkit-transition: all .4s ease-in-out;
+                transition: all .4s ease-in-out;
+            }
+
+            #border #line.two {
+                width: 5px;
+                height: 54px;
+                background-color: #E74C3C;
+                margin-left: -2px;
+                margin-top: 89px;
+                -webkit-transition: all .4s ease-in-out;
+                transition: all .4s ease-in-out;
+            }
+
+            #border #line.three {
+                width: 5px;
+                height: 54px;
+                background-color: #E74C3C;
+                margin-left: -2px;
+                margin-top: 143px;
+                -webkit-transition: all .4s ease-in-out;
+                transition: all .4s ease-in-out;
+            }
+
+            #border #line.four {
+                width: 5px;
+                height: 54px;
+                background-color: #E74C3C;
+                margin-left: -2px;
+                margin-top: 197px;
+                -webkit-transition: all .4s ease-in-out;
+                transition: all .4s ease-in-out;
+            }
+
+        #right-side {
+            height: 300px;
+            width: 75%;
+            overflow: hidden;
+        }
+
+            #right-side #first, #right-side #second, #right-side #third, #right-side #fourth {
+                position: absolute;
+                height: 300px;
+                width: 75%;
+                -webkit-transition: all .6s ease-in-out;
+                transition: all .6s ease-in-out;
+                margin-top: -350px;
+                opacity: 0;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column;
+            }
+
+                #right-side #first h1, #right-side #second h1, #right-side #third h1, #right-side #fourth h1 {
+                    font-weight: 800;
+                    color: #333;
+                }
+
+                #right-side #first p, #right-side #second p, #right-side #third p, #right-side #fourth p {
+                    color: #333;
+                    font-weight: 500;
+                    padding-left: 30px;
+                    padding-right: 30px;
+                }
+
+                #right-side #first.active, #right-side #second.active, #right-side #third.active, #right-side #fourth.active {
+                    margin-top: 0px;
+                    opacity: 1;
+                    -webkit-transition: all .6s ease-in-out;
+                    transition: all .6s ease-in-out;
+                }
+
+        form_main {
+            width: 100%;
+        }
+
+        .form_main h4 {
+            font-family: roboto;
+            font-size: 20px;
+            font-weight: 300;
+            margin-bottom: 15px;
+            margin-top: 20px;
+            text-transform: uppercase;
+        }
+
+        .heading {
+            border-bottom: 1px solid #fcab0e;
+            padding-bottom: 9px;
+            position: relative;
+        }
+
+            .heading span {
+                background: #9e6600 none repeat scroll 0 0;
+                bottom: -2px;
+                height: 3px;
+                left: 0;
+                position: absolute;
+                width: 75px;
+            }
+
+        .form {
+            border-radius: 7px;
+            padding: 6px;
+        }
+
+        .txt[type="text"] {
+            border: 1px solid #ccc;
+            margin: 10px 0;
+            padding: 10px 0 10px 5px;
+            width: 100%;
+        }
+
+        .txt_3[type="text"] {
+            margin: 10px 0 0;
+            padding: 10px 0 10px 5px;
+            width: 100%;
+        }
+
+        .txt2[type="submit"] {
+            background: #242424 none repeat scroll 0 0;
+            border: 1px solid #4f5c04;
+            border-radius: 25px;
+            color: #fff;
+            font-size: 16px;
+            font-style: normal;
+            line-height: 35px;
+            margin: 10px 0;
+            padding: 0;
+            text-transform: uppercase;
+            width: 30%;
+        }
+
+        .txt2:hover {
+            background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+            color: #5793ef;
+            transition: all 0.5s ease 0s;
+        }
+        /*--------------------*/
+        .details li {
+      list-style: none;
+    }
+    li {
+        margin-bottom:10px;
+        
+    }
+
+    /*--------------------*/
+    .news-section {
+    padding: 4em 0 3.5em;
+}
+a.news-btn {
+    color: #000;
+    display: inline-block;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #008e10;
+    color: #FFF;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+}
+a.news-btn:hover {
+    background: #161616;
+}
+
+.news-column h4 {
+    font-size: 1.3em;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 700;
+    padding: 0.8em 0 0.3em;
+    margin: 0;
+}
+.news-column p {
+    color: #777;
+    line-height: 1.7em;
+    padding: 0.1em 0 0em;
+    display: block;
+    font-size: 1em;
+}
+    </style>
+</head>
+<div class="pre-header">
+    <div class="container">
+        <div class="row">
+            <!-- BEGIN TOP BAR LEFT PART -->
+            <div class="col-md-6 col-sm-6 additional-shop-info">
+                <ul class="list-unstyled list-inline">
+                    <li><i class="fa fa-phone"></i><span>+1 456 6717</span></li>
+                    <li><i class="fa fa-envelope-o"></i><span>info@keenthemes.com</span></li>
+                </ul>
+            </div>
+            <!-- END TOP BAR LEFT PART -->
+            <!-- BEGIN TOP BAR MENU -->
+            <div class="col-md-6 col-sm-6 additional-nav">
+                <ul class="list-unstyled list-inline pull-right">
+                    <li><a href="page-login.html">Log In</a></li>
+                    <li><a href="Registation.html">Registration</a></li>
+                </ul>
+            </div>
+            <!-- END TOP BAR MENU -->
+        </div>
+    </div>
+</div>
+<!-- END TOP BAR -->
+<!-- BEGIN HEADER -->
+<div class="header">
+    <div class="container">
+        
+        <a class="site-logo" href="../Index.html"><img src="Files/corporate/img/logos/logo-corp-red.png" alt="Metronic FrontEnd"></a>
+        <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
+        <!-- BEGIN NAVIGATION -->
+        <div class="header-navigation pull-right font-transform-inherit">
+            <ul>
+                <li class="dropdown active">
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="../Index.html">
+                        Home
+
+                    </a>
+
+                    <!--<ul class="dropdown-menu">
+                        <li><a href="index.html">Home Default</a></li>
+                        <li class="active"><a href="index-header-fix.html">Home with Header Fixed</a></li>
+                        <li><a href="index-without-topbar.html">Home without Top Bar</a></li>
+                    </ul>-->
+                </li>
+                <li class="dropdown dropdown-megamenu">
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
+                        Products
+
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <div class="header-navigation-content">
+                                <div class="row">
+                                    <div class="col-md-4 header-navigation-col">
+                                        <h4>Footwear</h4>
+                                        <ul>
+                                            <li><a href="index.html">Astro Trainers</a></li>
+                                            <li><a href="index.html">Basketball Shoes</a></li>
+                                            <li><a href="index.html">Boots</a></li>
+                                            <li><a href="index.html">Canvas Shoes</a></li>
+                                            <li><a href="index.html">Football Boots</a></li>
+                                            <li><a href="index.html">Golf Shoes</a></li>
+                                            <li><a href="index.html">Hi Tops</a></li>
+                                            <li><a href="index.html">Indoor Trainers</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 header-navigation-col">
+                                        <h4>Clothing</h4>
+                                        <ul>
+                                            <li><a href="index.html">Base Layer</a></li>
+                                            <li><a href="index.html">Character</a></li>
+                                            <li><a href="index.html">Chinos</a></li>
+                                            <li><a href="index.html">Combats</a></li>
+                                            <li><a href="index.html">Cricket Clothing</a></li>
+                                            <li><a href="index.html">Fleeces</a></li>
+                                            <li><a href="index.html">Gilets</a></li>
+                                            <li><a href="index.html">Golf Tops</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-4 header-navigation-col">
+                                        <h4>Accessories</h4>
+                                        <ul>
+                                            <li><a href="index.html">Belts</a></li>
+                                            <li><a href="index.html">Caps</a></li>
+                                            <li><a href="index.html">Gloves</a></li>
+                                        </ul>
+                                        <h4>Clearance</h4>
+                                        <ul>
+                                            <li><a href="index.html">Jackets</a></li>
+                                            <li><a href="index.html">Bottoms</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
+                        Solutions
+
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li><a href="page-about.html">About Us</a></li>
+                        <li><a href="page-services.html">Services</a></li>
+                        <li><a href="page-prices.html">Prices</a></li>
+                        <li><a href="page-faq.html">FAQ</a></li>
+                        <li><a href="page-gallery.html">Gallery</a></li>
+                        <li><a href="page-search-result.html">Search Result</a></li>
+                        <li><a href="page-404.html">404</a></li>
+                        <li><a href="page-500.html">500</a></li>
+                        <li><a href="page-login.html">Login Page</a></li>
+                        <li><a href="page-forgotton-password.html">Forget Password</a></li>
+                        <li><a href="page-reg-page.html">Signup Page</a></li>
+                        <li><a href="page-careers.html">Careers</a></li>
+                        <li><a href="page-site-map.html">Site Map</a></li>
+                        <li><a href="page-contacts.html">Contact</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
+                        Services
+
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-submenu">
+                            <a href="index.html">Multi level <i class="fa fa-angle-right"></i></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="index.html">Second Level Link</a></li>
+                                <li><a href="index.html">Second Level Link</a></li>
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
+                                        Second Level Link
+                                        <i class="fa fa-angle-right"></i>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="index.html">Third Level Link</a></li>
+                                        <li><a href="index.html">Third Level Link</a></li>
+                                        <li><a href="index.html">Third Level Link</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
+                        Costomers
+
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li><a href="portfolio-4.html">Portfolio 4</a></li>
+                        <li><a href="portfolio-3.html">Portfolio 3</a></li>
+                        <li><a href="portfolio-2.html">Portfolio 2</a></li>
+                        <li><a href="portfolio-item.html">Portfolio Item</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
+                        Partners
+
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li><a href="blog.html">Blog Page</a></li>
+                        <li><a href="blog-item.html">Blog Item</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
+                        Resources
+
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li><a href="blog.html">Blog Page</a></li>
+                        <li><a href="blog-item.html">Blog Item</a></li>
+                    </ul>
+                </li>
+
+
+
+                <!-- BEGIN TOP SEARCH -->
+                <li class="menu-search">
+                    <span class="sep"></span>
+                    <i class="fa fa-search search-btn"></i>
+                    <div class="search-box">
+                        <form action="#">
+                            <div class="input-group">
+                                <input type="text" placeholder="Search" class="form-control">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary" type="submit">Search</button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+                <!-- END TOP SEARCH -->
+            </ul>
+        </div>
+        <!-- END NAVIGATION -->
+    </div>
+</div>
+<body ng-app="myApp" ng-controller="myCtrl">
+    {{5+5}}
+    <!-- ICONS -->
+    <svg id="svg-source" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position: absolute">
+
+        <g id="package" data-iconmelon="e-commerce icons:de2d76203b2448ee25bda0d82fa73c00">
+            <path d="M31.666,7.132l0.028-0.014L16.191,0L0.264,7.285l0.027,0.013v17.39l15.094,7.266V32l0.05-0.023l0.012,0.006l0.006-0.013
+	l16.283-7.442V7.132H31.666z M16.191,1.415l12.553,5.73l-3.352,1.604L12.535,3.088L16.191,1.415z M1.669,23.879V7.887l13.993,6.388
+	l0.006,16.256L1.669,23.879z M3.202,7.285L8.223,5.06l12.553,5.897l-4.592,2.195L3.202,7.285z M30.358,23.698l-13.307,6.294
+	l0.019-15.722l4.873-2.396l0.031,7.692l4.169-2.288V9.777l4.215-2.062V23.698z"></path>
+        </g>
+    </svg>
+    <!-- ICONS -->
+    <div id="wrapper">
+
+        <div id="left-side">
+            <ul>
+                <li class="choose active">
+                    <div class="icon active">
+                        <i class="fa fa-user" style="font-size:36px;color:red"></i>
+                    </div>
+                    User Profile
+                </li>
+                <li class="pay">
+                    <div class="icon">
+                        <i class="fa fa-credit-card" style="font-size:36px;color:red"></i>
+                    </div>
+                    User Licenses
+                </li>
+                <li class="wrap">
+                    <div class="icon">
+                        <i class="fa fa-key" style="font-size:36px;color:red"></i>
+                    </div>
+                    Key Generation
+                </li>
+                <li class="ship">
+                    <div class="icon">
+                        <svg viewBox="0 0 32 32">
+                            <g filter="">
+                                <use xlink:href="#package"></use>
+                            </g>
+                        </svg>
+                    </div>
+                    Ship
+                </li>
+            </ul>
+        </div>
+        <div id="border">
+            <div id="line" class="one"></div>
+        </div>
+        <div id="right-side">
+            <div id="first" class="active" style="margin-top:-20px">
+                <!--<div class="icon big">
+                    <svg viewBox="0 0 32 32">
+                        <g filter="">
+                            <use xlink:href="#shopping-cart"></use>
+                        </g>
+                    </svg>
+                </div>-->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form_main">
+                                <h4 class="heading"><strong>User  </strong> Profile <span></span></h4>
+
+                                <!--<div class="row">
+                                    <div class="col-md-2 col-xs-12 col-sm-6 col-lg-4">
+                                        <img src="https://www.svgimages.com/svg-image/s5/man-passportsize-silhouette-icon-256x256.png" alt="stack photo" class="img">
+                                    </div>
+                                    <div class="col-md-10 col-xs-12 col-sm-6 col-lg-8">
+                                        <div class="container" style="border-bottom:1px solid black">
+                                            <h2>John Doe</h2>
+                                        </div>
+                                        <hr>
+                                        <ul class="container details">
+                                            <li><p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>+91 90000 00000</p></li>
+                                            <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>somerandom@email.com</p></li>
+                                            <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>Hyderabad</p></li>
+                                            <li><p><span class="glyphicon glyphicon-new-window one" style="width:50px;"></span><a href="#">www.example.com</p></a>
+                                        </ul>
+                                    </div>
+                                </div>-->
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <img src="https://www.svgimages.com/svg-image/s5/man-passportsize-silhouette-icon-256x256.png" alt="stack photo" class="img" style="height:100px;width:100px">
+                                    </div>
+                                    <div class="col-md-7" style="margin-left:10px">
+                                        <div class="container">
+                                            <h2>{{userdetails.Name}}</h2>
+                                        </div>
+                                        <hr />
+                                        <ul class="container details">
+                                            <li><p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span>{{userdetails.MobileNumber}}</p></li>
+                                            <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>{{userdetails.EmailId}}</p></li>
+                                            <li><p><span class="glyphicon glyphicon-map-marker one" style="width:50px;"></span>{{userdetails.Country}},{{userdetails.Address}}</p></li>
+                                            <li><p><span class="glyphicon glyphicon-new-window one" style="width:50px;"></span><a href="#">{{userdetails.Company}}</p></a>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!--<div class="form">
+                                    <form action="contact_send_mail.php" method="post" id="contactFrm" name="contactFrm">
+                                        <input type="text" required="" placeholder="Bank Name" value="" name="name" class="txt" ng-model="Register.BankName">
+                                        <input type="text" required="" placeholder="User Name" value="" name="mob" class="txt" ng-model="Register.UserName">
+                                        <input type="text" required="" placeholder="Password" value="" name="email" class="txt" ng-model="Register.Password">
+                                        <a href="#">Forgot Password</a><br />
+
+                                        <input type="button" value="submit" name="submit" class="txt2" ng-click="saveNew(Register,'I')">
+                                    </form>
+                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="second">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form_main">
+                                <h4 class="heading"><strong>User </strong> Licenses <span></span></h4>
+                                <div class="col-md-8 news-column">
+                                    <img class="img-responsive" src="https://images.pexels.com/photos/7096/people-woman-coffee-meeting.jpg?w=940&h=650&auto=compress&cs=tinysrgb" title="name">
+                                    <h4>LOREM IPSUM DOLO</h4>
+                                    <p>here are many variations of passages of Lorem Ipsum available,</p>
+                                    <a class="news-btn" href="#">More info</a>
+                                </div>
+                                <!--<div class="form">
+                                    <form action="contact_send_mail.php" method="post" id="contactFrm" name="contactFrm">
+                                        <input type="text" required="" placeholder="Card Holder Name" value="" name="name" class="txt" ng-model="Register.CardHolderName">
+                                        <input type="text" required="" placeholder="Number Name" value="" name="mob" class="txt" ng-model="Register.CardNumber">
+                                        <select class="txt" ng-model="Register.ExpMonth">
+                                            <option value="Month">01</option>
+                                            <option value="Month">02</option>
+                                            <option value="Month">03</option>
+                                            <option value="Month">04</option>
+                                            <option value="Month">05</option>
+                                            <option value="Month">06</option>
+                                            <option value="Month">07</option>
+                                            <option value="Month">08</option>
+                                            <option value="Month">09</option>
+                                            <option value="Month">10</option>
+                                            <option value="Month">11</option>
+                                            <option value="Month">12</option>
+                                        </select>
+                                        <select class="txt" ng-model="Register.ExpYear">
+                                            <option value="Year">2011</option>
+                                            <option value="Year">2012</option>
+                                            <option value="Year">2013</option>
+                                            <option value="Year">2014</option>
+                                            <option value="Year">2015</option>
+                                            <option value="Year">2016</option>
+                                            <option value="Year">2017</option>
+                                            <option value="Year">2018</option>
+                                            <option value="Year">2019</option>
+                                            <option value="Year">2020</option>
+                                            <option value="Year">2021</option>
+                                            <option value="Year">2022</option>
+                                        </select>
+                                        <input type="text" required="" placeholder="CVV" value="" name="email" class="txt" ng-model="Register.CCode">
+
+
+                                        <input type="button" value="submit" name="submit" class="txt2" ng-click="saveNew(Register,'I')">
+                                    </form>
+                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="third">
+                <div class="icon big">
+                    <svg viewBox="0 0 32 32">
+                        <g filter="">
+                            <use xlink:href="#gift"></use>
+                        </g>
+                    </svg>
+                </div>
+                <h1>We will wrap it</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at viverra est, eu finibus mauris. Quisque tempus vestibulum fringilla. Morbi tortor eros, sollicitudin eu arcu sit amet, aliquet sagittis dolor. </p>
+            </div>
+            <div id="fourth">
+                <div class="icon big">
+                    <svg viewBox="0 0 32 32">
+                        <g filter="">
+                            <use xlink:href="#package"></use>
+                        </g>
+                    </svg>
+                </div>
+                <h1>Ship it</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at viverra est, eu finibus mauris. Quisque tempus vestibulum fringilla. Morbi tortor eros, sollicitudin eu arcu sit amet, aliquet sagittis dolor. </p>
+            </div>
+        </div>
+    </div>
+    <!-- BEGIN FOOTER -->
+    <div class="pre-footer" style="margin-top:400px">
+        <div class="container">
+            <div class="row">
+                <!-- BEGIN BOTTOM ABOUT BLOCK -->
+                <div class="col-md-4 col-sm-6 pre-footer-col">
+                    <h2>About us</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam sit nonummy nibh euismod tincidunt ut laoreet dolore magna aliquarm erat sit volutpat.</p>
+                    <div class="photo-stream">
+                        <h2>Photos Stream</h2>
+                        <ul class="list-unstyled">
+
+                            <li><a href="javascript:;"><img alt="" src="Files/pages/img/people/img5-large.jpg"></a></li>
+                            <li><a href="javascript:;"><img alt="" src="Files/pages/img/works/img1.jpg"></a></li>
+                            <li><a href="javascript:;"><img alt="" src="Files/pages/img/people/img4-large.jpg"></a></li>
+                            <li><a href="javascript:;"><img alt="" src="Files/pages/img/works/img6.jpg"></a></li>
+                            <li><a href="javascript:;"><img alt="" src="Files/pages/img/works/img3.jpg"></a></li>
+                            <li><a href="javascript:;"><img alt="" src="Files/pages/img/people/img2-large.jpg"></a></li>
+                            <li><a href="javascript:;"><img alt="" src="Files/pages/img/works/img2.jpg"></a></li>
+                            <li><a href="javascript:;"><img alt="" src="Files/pages/img/works/img5.jpg"></a></li>
+                            <li><a href="javascript:;"><img alt="" src="Files/pages/img/people/img5-small.jpg"></a></li>
+                            <li><a href="javascript:;"><img alt="" src="Files/pages/img/works/img1.jpg"></a></li>
+                            <li><a href="javascript:;"><img alt="" src="Files/pages/img/people/img4-large.jpg"></a></li>
+                            <li><a href="javascript:;"><img alt="" src="Files/pages/img/works/img6.jpg"></a></li>
+                            <li><a href="javascript:;"><img alt="" src="Files/pages/img/works/img3.jpg"></a></li>
+                            <li><a href="javascript:;"><img alt="" src="Files/pages/img/people/img2-large.jpg"></a></li>
+                            <li><a href="javascript:;"><img alt="" src="Files/pages/img/works/img2.jpg"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- END BOTTOM ABOUT BLOCK -->
+                <!-- BEGIN BOTTOM CONTACTS -->
+                <div class="col-md-4 col-sm-6 pre-footer-col">
+                    <h2>Our Contacts</h2>
+                    <address class="margin-bottom-40">
+                        35, Lorem Lis Street, Park Ave<br>
+                        California, US<br>
+                        Phone: 300 323 3456<br>
+                        Fax: 300 323 1456<br>
+                        Email: <a href="mailto:info@metronic.com">info@metronic.com</a><br>
+                        Skype: <a href="skype:metronic">metronic</a>
+                    </address>
+                    <div class="pre-footer-subscribe-box pre-footer-subscribe-box-vertical">
+                        <h2>Newsletter</h2>
+                        <p>Subscribe to our newsletter and stay up to date with the latest news and deals!</p>
+                        <form action="#">
+                            <div class="input-group">
+                                <input type="text" placeholder="youremail@mail.com" class="form-control">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary" type="submit">Subscribe</button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- END BOTTOM CONTACTS -->
+                <!-- BEGIN TWITTER BLOCK -->
+                <div class="col-md-4 col-sm-6 pre-footer-col">
+                    <h2 class="margin-bottom-0">Latest Tweets</h2>
+                    <a class="twitter-timeline" href="https://twitter.com/twitterapi" data-tweet-limit="2" data-theme="dark" data-link-color="#57C8EB" data-widget-id="455411516829736961" data-chrome="noheader nofooter noscrollbar noborders transparent">Loading tweets by @keenthemes...</a>
+                </div>
+                <!-- END TWITTER BLOCK -->
+            </div>
+        </div>
+    </div>
+    <!-- END FOOTER -->
+    <script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="Js/angular.js"></script>
+    <script src="Js/bootstrap.min.js"></script>
+    <script src="Js/ngStorage.js"></script>
+    <script src="Js/ui-bootstrap-tpls-1.3.3.js"></script>
+    <script src="Js/UserProfile.js"></script>
+
+    <script>
+        $(".choose").click(function () {
+            $(".choose").addClass("active");
+            $(".choose > .icon").addClass("active");
+            $(".pay").removeClass("active");
+            $(".wrap").removeClass("active");
+            $(".ship").removeClass("active");
+            $(".pay > .icon").removeClass("active");
+            $(".wrap > .icon").removeClass("active");
+            $(".ship > .icon").removeClass("active");
+            $("#line").addClass("one");
+            $("#line").removeClass("two");
+            $("#line").removeClass("three");
+            $("#line").removeClass("four");
+        })
+
+        $(".pay").click(function () {
+            $(".pay").addClass("active");
+            $(".pay > .icon").addClass("active");
+            $(".choose").removeClass("active");
+            $(".wrap").removeClass("active");
+            $(".ship").removeClass("active");
+            $(".choose > .icon").removeClass("active");
+            $(".wrap > .icon").removeClass("active");
+            $(".ship > .icon").removeClass("active");
+            $("#line").addClass("two");
+            $("#line").removeClass("one");
+            $("#line").removeClass("three");
+            $("#line").removeClass("four");
+        })
+
+        $(".wrap").click(function () {
+            $(".wrap").addClass("active");
+            $(".wrap > .icon").addClass("active");
+            $(".pay").removeClass("active");
+            $(".choose").removeClass("active");
+            $(".ship").removeClass("active");
+            $(".pay > .icon").removeClass("active");
+            $(".choose > .icon").removeClass("active");
+            $(".ship > .icon").removeClass("active");
+            $("#line").addClass("three");
+            $("#line").removeClass("two");
+            $("#line").removeClass("one");
+            $("#line").removeClass("four");
+        })
+
+        $(".ship").click(function () {
+            $(".ship").addClass("active");
+            $(".ship > .icon").addClass("active");
+            $(".pay").removeClass("active");
+            $(".wrap").removeClass("active");
+            $(".choose").removeClass("active");
+            $(".pay > .icon").removeClass("active");
+            $(".wrap > .icon").removeClass("active");
+            $(".choose > .icon").removeClass("active");
+            $("#line").addClass("four");
+            $("#line").removeClass("two");
+            $("#line").removeClass("three");
+            $("#line").removeClass("one");
+        })
+
+        $(".choose").click(function () {
+            $("#first").addClass("active");
+            $("#second").removeClass("active");
+            $("#third").removeClass("active");
+            $("#fourth").removeClass("active");
+        })
+
+        $(".pay").click(function () {
+            $("#first").removeClass("active");
+            $("#second").addClass("active");
+            $("#third").removeClass("active");
+            $("#fourth").removeClass("active");
+        })
+
+        $(".wrap").click(function () {
+            $("#first").removeClass("active");
+            $("#second").removeClass("active");
+            $("#third").addClass("active");
+            $("#fourth").removeClass("active");
+        })
+
+        $(".ship").click(function () {
+            $("#first").removeClass("active");
+            $("#second").removeClass("active");
+            $("#third").removeClass("active");
+            $("#fourth").addClass("active");
+        })
+        //# sourceURL=pen.js
+    </script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+    <!------ Include the above in your HEAD tag ---------->
+
+</body>
+</html>

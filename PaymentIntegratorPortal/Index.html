@@ -66,11 +66,33 @@
             z-index: 1;
             background: #DFDFDF;
         }
+
+        .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 24px;
+}
+        .button3 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #f44336;
+     border-radius: 24px;
+}
+
         </style>
 </head>
 <!-- Head END -->
 <!-- Body BEGIN -->
 <body class="corporate" ng-app="myApp" ng-controller="myCtrl">
+    {{5+5}}
     
     <!-- BEGIN STYLE CUSTOMIZER -->
     <div class="color-panel hidden-sm">
@@ -104,7 +126,17 @@
                 <!-- BEGIN TOP BAR MENU -->
                 <div class="col-md-6 col-sm-6 additional-nav">
                     <ul class="list-unstyled list-inline pull-right">
-                        <li><a href="page-login.html">Log In</a></li>
+
+
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Hallo<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Page 1-1</a></li>
+                                <li><a href="#">Page 1-2</a></li>
+                                <li><a href="#">Page 1-3</a></li>
+                            </ul>
+                        </li>
+                        <li><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Log In</button></li>
                         <li>
                             <!--<a href="UI/Registation.html" >Registration</a>-->
                             <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
@@ -160,7 +192,7 @@
                                                         Email
                                                     </label>
                                                     <div class="col-sm-10">
-                                                        <input type="email" class="form-control" id="email1" placeholder="Email" />
+                                                        <input type="text" class="form-control" id="email1" placeholder="Email" ng-model="UserName"/>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -168,14 +200,14 @@
                                                         Password
                                                     </label>
                                                     <div class="col-sm-10">
-                                                        <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email" />
+                                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="PassWord" ng-model="Password" />
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-sm-2">
                                                     </div>
-                                                    <div class="col-sm-10">
-                                                        <button type="submit" class="btn btn-primary btn-sm">
+                                                    <div class="col-sm-10" >
+                                                        <button type="submit" class="btn btn-primary btn-sm" ng-click="Signin()">
                                                             Submit
                                                         </button>
                                                         <a href="javascript:;">Forgot your password?</a>
@@ -237,11 +269,11 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="mobile" class="col-sm-2 control-label">
+                                                    <label for="text" class="col-sm-2 control-label">
                                                         Mobile
                                                     </label>
                                                     <div class="col-sm-10">
-                                                        <input type="number" max="20" class="form-control" id="mobile" placeholder="Mobile" ng-model="Register.Mobile" />
+                                                        <input type="text" max="20" class="form-control" id="mobile" placeholder="Mobile" ng-model="Register.Mobile" />
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -264,7 +296,7 @@
                                                     <div class="col-sm-2">
                                                     </div>
                                                     <div class="col-sm-10">
-                                                        <button type="button" class="btn btn-primary btn-sm" ng-click="save(Register)">
+                                                        <button type="button" class="btn btn-primary btn-sm" ng-click="save(Register,'I')">
                                                             Save & Continue
                                                         </button>
                                                         <button type="button" class="btn btn-default btn-sm" >
@@ -320,7 +352,7 @@
                         </ul>-->
                     </li>
                     <li class="dropdown dropdown-megamenu">
-                        <a class="dropdown-toggle" data-toggle="dropdown" data-target="UI/Products.html" href="UI/Products.html">
+                        <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="#">
                             Products
 
 
@@ -580,6 +612,79 @@
                     <p>Lorem ipsum dolor sit amet, dolore eiusmod quis tempor incididunt ut et dolore Ut veniam unde nostrudlaboris. Sed unde omnis iste natus error sit voluptatem.</p>
                 </div>
             </div>
+
+           <!-------------Box Start ------------->
+            <section id="plans">
+                <div class="container">
+                    <div class="row">
+                        <!-- item -->
+                        <div class="col-md-4 text-center">
+                            <div class="panel panel-danger panel-pricing">
+                                <div class="panel-heading">
+                                    <i class="fa fa-desktop"></i>
+                                    <h3>Plan 1</h3>
+                                </div>
+                                <div class="panel-body text-center">
+                                    <p><strong>$100 / Month</strong></p>
+                                </div>
+                                <ul class="list-group text-center">
+                                    <li class="list-group-item"><i class="fa fa-check"></i> Personal use</li>
+                                    <li class="list-group-item"><i class="fa fa-check"></i> Unlimited projects</li>
+                                    <li class="list-group-item"><i class="fa fa-check"></i> 27/7 support</li>
+                                </ul>
+                                <div class="panel-footer">
+                                    <a class="btn btn-lg btn-block btn-danger" href="#">BUY NOW!</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /item -->
+                        <!-- item -->
+                        <div class="col-md-4 text-center">
+                            <div class="panel panel-warning panel-pricing">
+                                <div class="panel-heading">
+                                    <i class="fa fa-desktop"></i>
+                                    <h3>Plan 2</h3>
+                                </div>
+                                <div class="panel-body text-center">
+                                    <p><strong>$200 / Month</strong></p>
+                                </div>
+                                <ul class="list-group text-center">
+                                    <li class="list-group-item"><i class="fa fa-check"></i> Personal use</li>
+                                    <li class="list-group-item"><i class="fa fa-check"></i> Unlimited projects</li>
+                                    <li class="list-group-item"><i class="fa fa-check"></i> 27/7 support</li>
+                                </ul>
+                                <div class="panel-footer">
+                                    <a class="btn btn-lg btn-block btn-warning" href="#">BUY NOW!</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /item -->
+                        <!-- item -->
+                        <div class="col-md-4 text-center">
+                            <div class="panel panel-success panel-pricing">
+                                <div class="panel-heading">
+                                    <i class="fa fa-desktop"></i>
+                                    <h3>Plan 3</h3>
+                                </div>
+                                <div class="panel-body text-center">
+                                    <p><strong>$300 / Month</strong></p>
+                                </div>
+                                <ul class="list-group text-center">
+                                    <li class="list-group-item"><i class="fa fa-check"></i> Personal use</li>
+                                    <li class="list-group-item"><i class="fa fa-check"></i> Unlimited projects</li>
+                                    <li class="list-group-item"><i class="fa fa-check"></i> 27/7 support</li>
+                                </ul>
+                                <div class="panel-footer">
+                                    <a class="btn btn-lg btn-block btn-success" href="#">BUY NOW!</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /item -->
+                    </div>
+                </div>
+            </section>
+            <!-----------Box End--------------->
+           
             <!-- END SERVICE BOX -->
             <!-- BEGIN BLOCKQUOTE BLOCK -->
             <!--<div class="row quote-v1 margin-bottom-30">
@@ -781,20 +886,20 @@
             <div class="row margin-bottom-40 front-steps-wrapper front-steps-count-3">
                 <div class="col-md-4 col-sm-4 front-step-col">
                     <div class="front-step front-step1">
-                        <h2>Goal definition</h2>
-                        <p>Lorem ipsum dolor sit amet sit consectetur adipisicing eiusmod tempor.</p>
+                        <h2>Register</h2>
+                        <p>Register and get your unique integrator key for integration.<a href="#">More..</a></p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4 front-step-col">
                     <div class="front-step front-step2">
-                        <h2>Analyse</h2>
-                        <p>Lorem ipsum dolor sit amet sit consectetur adipisicing eiusmod tempor.</p>
+                        <h2>Integrate</h2>
+                        <p>Integrate using the APIs for your business use case.<a href="#">More..</a></p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4 front-step-col">
                     <div class="front-step front-step3">
-                        <h2>Implementation</h2>
-                        <p>Lorem ipsum dolor sit amet sit consectetur adipisicing eiusmod tempor.</p>
+                        <h2>Manage</h2>
+                        <p>manage all your transactions and configurations.<a href="#">More..</a></p>
                     </div>
                 </div>
             </div>
@@ -979,9 +1084,10 @@
     <script src="UI/Files/pages/scripts/bs-carousel.js"></script>
     <script src="UI/Js/angular.js"></script>
     <script src="UI/Js/ngStorage.js"></script>
-    <script src="UI/Js/ui-bootstrap-tpls-1.3.3.js"></script>
+    <script src="UI/Js/ui-bootstrap-tpls-1.3.3.js"></script>   
     <script src="UI/Js/Registration.js"></script>
-    <script type="text/javascript">
+    <script src="UI/Js/Index.js"></script>
+    <!--<script type="text/javascript">
         jQuery(document).ready(function () {
             Layout.init();
             Layout.initOWL();
@@ -989,10 +1095,10 @@
             Layout.initFixHeaderWithPreHeader(); /* Switch On Header Fixing (only if you have pre-header) */
             Layout.initNavScrolling();
         });
-    </script>
-    <script>
+    </script>-->
+    <!--<script>
         $('#myModal').modal('show');
-    </script>
+    </script>-->
     <!-- END PAGE LEVEL JAVASCRIPTS -->
 </body>
 <!-- END BODY -->
